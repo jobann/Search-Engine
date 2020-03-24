@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -19,6 +20,14 @@ public class MainMenu {
 			switch (input) {
 			case 1:
 				System.out.println("Downloading databases...");
+				Spider spider = new Spider();
+				try {
+					spider.start();
+					System.out.println("Download Successful!\n\n");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case 2:
 				System.out.println("Searching...");

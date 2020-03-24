@@ -1,0 +1,105 @@
+https://www.javatpoint.com/downcasting-with-instanceof-operator
+Java instanceof - javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Java Training Basics of Java Java Object Class Java OOPs Concepts Naming Convention Object and Class Constructor static keyword this keyword Java Inheritance Inheritance(IS-A) Aggregation(HAS-A) Java Polymorphism Method Overloading Method Overriding Covariant Return Type super keyword Instance Initializer block final keyword Runtime Polymorphism Dynamic Binding instanceof operator Java Abstraction Abstract class Interface Abstract vs Interface Java Encapsulation Package Access Modifiers Encapsulation Java Array Java Array Java OOPs Misc Object class Object Cloning Math class Wrapper Class Java Recursion Call By Value strictfp keyword javadoc tool Command Line Arg Object vs Class Overloading vs Overriding Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT & Events Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Internationalization Interview Questions next>> <<prev Java instanceof java instanceof Example of instanceof operator Applying the instanceof operator with a variable the have null value Downcasting with instanceof operator Downcasting without instanceof operator The java instanceof operator is used to test whether the object is an instance of the specified type (class or subclass or interface). The instanceof in java is also known as type comparison operator because it compares the instance with type. It returns either true or false. If we apply the instanceof operator with any variable that has null value, it returns false. Simple example of java instanceof Let's see the simple example of instance operator where it tests the current class. 
+class Simple1{
+ public static void main(String args[]){
+ Simple1 s=new Simple1();
+ System.out.println(s instanceof Simple1);//true
+ }
+}
+ Test it Now 
+Output:true
+ An object of subclass type is also a type of parent class. For example, if Dog extends Animal then object of Dog can be referred by either Dog or Animal class. Another example of java instanceof operator 
+class Animal{}
+class Dog1 extends Animal{//Dog inherits Animal
+
+ public static void main(String args[]){
+ Dog1 d=new Dog1();
+ System.out.println(d instanceof Animal);//true
+ }
+}
+ Test it Now 
+Output:true
+ instanceof in java with a variable that have null value If we apply instanceof operator with a variable that have null value, it returns false. Let's see the example given below where we apply instanceof operator with the variable that have null value. 
+class Dog2{
+ public static void main(String args[]){
+  Dog2 d=null;
+  System.out.println(d instanceof Dog2);//false
+ }
+}
+ Test it Now 
+Output:false
+ Downcasting with java instanceof operator When Subclass type refers to the object of Parent class, it is known as downcasting. If we perform it directly, compiler gives Compilation error. If you perform it by typecasting, ClassCastException is thrown at runtime. But if we use instanceof operator, downcasting is possible. 
+Dog d=new Animal();//Compilation error
+ If we perform downcasting by typecasting, ClassCastException is thrown at runtime. 
+Dog d=(Dog)new Animal();
+//Compiles successfully but ClassCastException is thrown at runtime
+ Possibility of downcasting with instanceof Let's see the example, where downcasting is possible by instanceof operator. 
+class Animal { }
+
+class Dog3 extends Animal {
+  static void method(Animal a) {
+    if(a instanceof Dog3){
+       Dog3 d=(Dog3)a;//downcasting
+       System.out.println("ok downcasting performed");
+    }
+  }
+ 
+  public static void main (String [] args) {
+    Animal a=new Dog3();
+    Dog3.method(a);
+  }
+  
+ }
+ Test it Now 
+Output:ok downcasting performed
+ Downcasting without the use of java instanceof Downcasting can also be performed without the use of instanceof operator as displayed in the following example: 
+class Animal { }
+class Dog4 extends Animal {
+  static void method(Animal a) {
+       Dog4 d=(Dog4)a;//downcasting
+       System.out.println("ok downcasting performed");
+  }
+   public static void main (String [] args) {
+    Animal a=new Dog4();
+    Dog4.method(a);
+  }
+}
+ Test it Now 
+Output:ok downcasting performed
+ Let's take closer look at this, actual object that is referred by a, is an object of Dog class. So if we downcast it, it is fine. But what will happen if we write: 
+Animal a=new Animal();
+Dog.method(a);
+//Now ClassCastException but not in case of instanceof operator
+ Understanding Real use of instanceof in java Let's see the real use of instanceof keyword by the example given below. 
+interface Printable{}
+class A implements Printable{
+public void a(){System.out.println("a method");}
+}
+class B implements Printable{
+public void b(){System.out.println("b method");}
+}
+
+class Call{
+void invoke(Printable p){//upcasting
+if(p instanceof A){
+A a=(A)p;//Downcasting 
+a.a();
+}
+if(p instanceof B){
+B b=(B)p;//Downcasting 
+b.b();
+}
+
+}
+}//end of Call class
+
+class Test4{
+public static void main(String args[]){
+Printable p=new B();
+Call c=new Call();
+c.invoke(p);
+}
+}
+ Test it Now 
+Output: b method
+ Next TopicAbstract class in java <<prev next>> Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.

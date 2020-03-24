@@ -1,0 +1,6 @@
+https://compiler.javatpoint.com/opr/test.jsp?filename=Simple
+Compile Java code online | Edit and test you java code - Javatpoint Online Java Compiler By JavaTpoint.com public class Simple{
+public static void main(String args[]){
+System.out.println("hello javatpoint");
+}}
+ Output

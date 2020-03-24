@@ -1,0 +1,74 @@
+https://www.javatpoint.com/method-overriding-in-java
+Method Overriding in Java - javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Java Training Basics of Java Java Object Class Java OOPs Concepts Naming Convention Object and Class Constructor static keyword this keyword Java Inheritance Inheritance(IS-A) Aggregation(HAS-A) Java Polymorphism Method Overloading Method Overriding Covariant Return Type super keyword Instance Initializer block final keyword Runtime Polymorphism Dynamic Binding instanceof operator Java Abstraction Abstract class Interface Abstract vs Interface Java Encapsulation Package Access Modifiers Encapsulation Java Array Java Array Java OOPs Misc Object class Object Cloning Math class Wrapper Class Java Recursion Call By Value strictfp keyword javadoc tool Command Line Arg Object vs Class Overloading vs Overriding Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT & Events Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Internationalization Interview Questions next ? ? prev Method Overriding in Java Understanding the problem without method overriding Can we override the static method Method overloading vs. method overriding If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java. In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding. Usage of Java Method Overriding Method overriding is used to provide the specific implementation of a method which is already provided by its superclass. Method overriding is used for runtime polymorphism Rules for Java Method Overriding The method must have the same name as in the parent class The method must have the same parameter as in the parent class. There must be an IS-A relationship (inheritance). Understanding the problem without method overriding Let's understand the problem that we may face in the program if we don't use method overriding. 
+//Java Program to demonstrate why we need method overriding
+//Here, we are calling the method of parent class with child
+//class object.
+//Creating a parent class
+class Vehicle{
+  void run(){System.out.println("Vehicle is running");}
+}
+//Creating a child class
+class Bike extends Vehicle{
+  public static void main(String args[]){
+  //creating an instance of child class
+  Bike obj = new Bike();
+  //calling the method with child class instance
+  obj.run();
+  }
+}
+ Test it Now Output: 
+Vehicle is running
+ Problem is that I have to provide a specific implementation of run() method in subclass that is why we use method overriding. Example of method overriding In this example, we have defined the run method in the subclass as defined in the parent class but it has some specific implementation. The name and parameter of the method are the same, and there is IS-A relationship between the classes, so there is method overriding. 
+//Java Program to illustrate the use of Java Method Overriding
+//Creating a parent class.
+class Vehicle{
+  //defining a method
+  void run(){System.out.println("Vehicle is running");}
+}
+//Creating a child class
+class Bike2 extends Vehicle{
+  //defining the same method as in the parent class
+  void run(){System.out.println("Bike is running safely");}
+
+  public static void main(String args[]){
+  Bike2 obj = new Bike2();//creating object
+  obj.run();//calling method
+  }
+}
+ Test it Now Output: 
+Bike is running safely
+ A real example of Java Method Overriding Consider a scenario where Bank is a class that provides functionality to get the rate of interest. However, the rate of interest varies according to banks. For example, SBI, ICICI and AXIS banks could provide 8%, 7%, and 9% rate of interest. Java method overriding is mostly used in Runtime Polymorphism which we will learn in next pages. 
+//Java Program to demonstrate the real scenario of Java Method Overriding
+//where three classes are overriding the method of a parent class.
+//Creating a parent class.
+class Bank{
+int getRateOfInterest(){return 0;}
+}
+//Creating child classes.
+class SBI extends Bank{
+int getRateOfInterest(){return 8;}
+}
+
+class ICICI extends Bank{
+int getRateOfInterest(){return 7;}
+}
+class AXIS extends Bank{
+int getRateOfInterest(){return 9;}
+}
+//Test class to create objects and call the methods
+class Test2{
+public static void main(String args[]){
+SBI s=new SBI();
+ICICI i=new ICICI();
+AXIS a=new AXIS();
+System.out.println("SBI Rate of Interest: "+s.getRateOfInterest());
+System.out.println("ICICI Rate of Interest: "+i.getRateOfInterest());
+System.out.println("AXIS Rate of Interest: "+a.getRateOfInterest());
+}
+}
+ Test it Now 
+Output:
+SBI Rate of Interest: 8
+ICICI Rate of Interest: 7
+AXIS Rate of Interest: 9
+ Can we override static method? No, a static method cannot be overridden. It can be proved by runtime polymorphism, so we will learn it later. Why can we not override static method? It is because the static method is bound with class whereas instance method is bound with an object. Static belongs to the class area, and an instance belongs to the heap area. Can we override java main method? No, because the main is a static method. Difference between method Overloading and Method Overriding in java Click me for the difference between method overloading and overriding More topics on Method Overriding (Not For Beginners) Method Overriding with Access Modifier Let's see the concept of method overriding with access modifier. Exception Handling with Method Overriding Let's see the concept of method overriding with exception handling. Next TopicCovariant Return Type ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.

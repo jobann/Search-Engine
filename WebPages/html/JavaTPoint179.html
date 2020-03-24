@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Learn C Programming Language Tutorial - javatpoint</title>
+  <link rel="SHORTCUT ICON" href="https://static.javatpoint.com/images/favicon2.png"> 
+  <link rel="stylesheet" type="text/css" href="https://static.javatpoint.com/link.css">
+  <link rel="dns-prefetch" href="https://clients1.google.com">
+  <link rel="dns-prefetch" href="https://static.javatpoint.com">
+  <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link rel="dns-prefetch" href="https://feedify.net">
+  <meta name="theme-color" content="#4CAF50">
+  <meta property="og:title" content="Learn C Programming Language Tutorial - javatpoint">
+  <meta property="og:description" content="Learn C Tutorial or C Programming Language Tutorial or what is c programming, C language with programming examples for beginners and professionals covering concepts, control statements, c array, c pointers, c structures, c union, c strings and more."> 
+  <meta name="keywords" content="c, language,what is c programming, tutorial, programming, example, beginners, professionals, interview questions">
+  <meta name="description" content="Learn C Tutorial or C Programming Language Tutorial or what is c programming, C language with programming examples for beginners and professionals covering concepts, control statements, c array, c pointers, c structures, c union, c strings and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="canonical" href="https://www.javatpoint.com/c-programming-language-tutorial"> 
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta name="twitter:title" property="og:title" content="Learn C Programming Language Tutorial - javatpoint">
+  <meta name="twitter:description" property="og:description" content="Learn C Tutorial or C Programming Language Tutorial or what is c programming, C language with programming examples for beginners and professionals covering concepts, control statements, c array, c pointers, c structures, c union, c strings and more.">
+  <meta property="og:url" content="https://www.javatpoint.com/c-programming-language-tutorial">
+  <meta property="og:site_name" content="www.javatpoint.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@pagejavatpoint">
+  <meta name="twitter:domain" content="www.javatpoint.com">
+  <meta name="twitter:creator" content="@pagejavatpoint"> 
+  <link href="https://www.javatpoint.com/manifest.json" rel="manifest"> 
+  <script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//delivery.adrecover.com/37784/adRecover.js?ts=1543562646174'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script> 
+  <script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/37780/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script> 
+ </head> 
+ <body onload="highlightlink()"> 
+  <button onclick="topFunction()" id="myBtn" title="Go to top">&#x21e7;</button> 
+  <div id="page" style="margin:-8px;background-color:#f5f5f4;">
+   <div id="container"> 
+    <div class="header">
+     <table style="width:100%;margin-bottom:5px"> 
+      <tbody>
+       <tr> 
+        <td> 
+         <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px"> 
+          <a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a> 
+         </div> 
+         <div style="float:left;width:60%;"> 
+          <script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script> 
+          <gcse:search></gcse:search> 
+         </div> </td> 
+       </tr> 
+       <!--<tr>
+        <td>
+            <div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45px"></span><span style="float:right;margin-right:5px;width:45%"> </span>
+                
+            </div>
+        </td>
+    </tr>--> 
+      </tbody>
+     </table> 
+    </div> 
+    <div class="headermobile"> 
+     <div style="margin-top:10px;padding:0px;text-align:left;"> 
+      <span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"></span> 
+      <span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span> 
+     </div> 
+     <div style="margin:0px;padding:0px;clear:both"> 
+      <script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script> 
+      <gcse:search></gcse:search> 
+      <!--<form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> <input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint"/><input type="hidden" name="sitesearch" value="www.javatpoint.com"/></form>--> 
+     </div> 
+    </div> 
+    <div id="link" style="clear:both"> 
+     <div class="ddsmoothmenu"> 
+      <ul> 
+       <li><a href="https://www.javatpoint.com">Home</a></li> 
+       <li><a href="c-programming-language-tutorial" class="selected">C</a></li> 
+       <li><a href="cpp-tutorial">C++</a></li> 
+       <li><a href="c-sharp-tutorial">C#</a></li> 
+       <li><a href="java-tutorial">Java</a></li> 
+       <li><a href="sql-tutorial">SQL</a></li> 
+       <li><a href="html-tutorial">HTML</a></li> 
+       <li><a href="css-tutorial">CSS</a></li> 
+       <li><a href="javascript-tutorial">JavaScript</a></li> 
+       <li><a href="xml-tutorial">XML</a></li> 
+       <li><a href="ajax-tutorial">Ajax</a></li> 
+       <li><a href="android-tutorial">Android</a></li> 
+       <li><a href="cloud-computing-tutorial">Cloud</a></li> 
+       <li><a href="design-patterns-in-java">Design Pattern</a></li> 
+       <li><a href="examaccess">Quiz</a></li> 
+       <li><a href="free-java-projects">Projects</a></li> 
+       <li><a href="corejava-interview-questions">Interview Q</a></li> 
+       <li><a href="comment.jsp">Comment</a></li> 
+       <li><a href="forum">Forum</a></li> 
+      </ul> 
+      <br style="clear: left"> 
+     </div>
+    </div> 
+    <div class="mobilemenu" style="clear:both"> 
+     <!-- Cm_300x250_Mob_14/9 --> 
+     <ins class="adPushupAds" data-adpcontrol="hqdgs" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSBDbV8zMDB4MjUwX01vYl8xNC85IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MzAwcHg7aGVpZ2h0OjI1MHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjcwMTQyNzI1MTkiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4="></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+    </div> 
+    <div id="menu"> 
+     <a target="_blank" href="https://training.javatpoint.com/c-cpp-training.jsp" class="training">C/C++ Training</a> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Tutorial</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-programming-language-tutorial">What is C Language</a> 
+      <a href="history-of-c-language">History of C </a> 
+      <a href="features-of-c-language">Features of C</a> 
+      <a href="how-to-install-c">How to install C</a> 
+      <a href="first-c-program">First C Program</a> 
+      <a href="compilation-process-in-c">Compilation Process in C</a> 
+      <a href="printf-scanf">printf scanf</a> 
+      <a href="variables-in-c">Variables in C</a> 
+      <a href="data-types-in-c">Data Types in c</a> 
+      <a href="keywords-in-c">Keywords in c</a> 
+      <a href="c-identifiers">C Identifiers</a> 
+      <a href="c-operators">C Operators</a> 
+      <a href="comments-in-c">C Comments</a> 
+      <a href="c-format-specifier">C Format Specifier</a> 
+      <a href="escape-sequence-in-c">C Escape Sequence</a> 
+      <a href="ascii-value-in-c">ASCII value in C</a> 
+      <a href="constants-in-c">Constants in C</a> 
+      <a href="literals-in-c">Literals in C</a> 
+      <a href="tokens-in-c">Tokens in C</a> 
+      <a href="c-boolean">C Boolean</a> 
+      <a href="static-in-c">Static in C</a> 
+      <a href="conditional-operator-in-c">Conditional Operator in C</a> 
+      <a href="bitwise-operator-in-c">Bitwise Operator in C</a> 
+      <a href="2s-complement-in-c">2s complement in C</a> 
+      <a href="/test/c-fundamental-1"><span>C Fundamental Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Control Statements</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-if-else">C if-else</a> 
+      <a href="c-switch">C switch</a> 
+      <a href="if-else-vs-switch">if-else vs switch</a> 
+      <a href="c-loop">C Loops</a> 
+      <a href="do-while-loop-in-c">C do-while loop</a> 
+      <a href="while-loop-in-c">C while loop</a> 
+      <a href="for-loop-in-c">C for loop</a> 
+      <a href="nested-loops-in-c">Nested Loops in C</a> 
+      <a href="infinite-loop-in-c">Infinite Loop in C</a> 
+      <a href="c-break">C break</a> 
+      <a href="c-continue">C continue</a> 
+      <a href="c-goto">C goto</a> 
+      <a href="type-casting-in-c">Type Casting</a> 
+      <a href="/test/c-control-statements-1"><span>C Control Statement Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Functions</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="functions-in-c">What is function</a> 
+      <a href="call-by-value-and-call-by-reference-in-c">Call: Value &amp; Reference</a> 
+      <a href="recursion-in-c">Recursion in c</a> 
+      <a href="storage-classes-in-c">Storage Classes</a> 
+      <a href="/test/c-functions-1"><span>C Functions Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Array</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-array">1-D Array</a> 
+      <a href="two-dimensional-array-in-c">2-D Array</a> 
+      <a href="return-an-array-in-c">Return an Array in C</a> 
+      <a href="passing-array-to-function-in-c">Array to Function</a> 
+      <a href="/test/c-array-1"><span>C Array Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Pointers</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-pointers"><span>C Pointers</span></a> 
+      <a href="c-pointer-to-pointer"><span>C Pointer to Pointer</span></a> 
+      <a href="pointer-arithmetic-in-c"><span>C Pointer Arithmetic</span></a> 
+      <a href="dangling-pointers-in-c">Dangling Pointers in C</a> 
+      <a href="size-of-operator-in-c">sizeof() operator in C</a> 
+      <a href="const-pointer-in-c">const Pointer in C</a> 
+      <a href="void-pointer-in-c">void pointer in C</a> 
+      <a href="c-dereference-pointer">C Dereference Pointer</a> 
+      <a href="null-pointer-in-c">Null Pointer in C</a> 
+      <a href="c-function-pointer">C Function Pointer</a> 
+      <a href="/test/c-pointers-1"><span>C Pointers Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Dynamic Memory</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="dynamic-memory-allocation-in-c"><span>Dynamic memory</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Strings</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-strings"><span>String in C</span></a> 
+      <a href="c-gets-puts"><span>C gets() &amp; puts()</span></a> 
+      <a href="c-string-functions"><span>C String Functions</span></a> 
+      <a href="c-strlen"><span>C strlen()</span></a> 
+      <a href="c-strcpy"><span>C strcpy()</span></a> 
+      <a href="c-strcat"><span>C strcat()</span></a> 
+      <a href="c-strcmp"><span>C strcmp()</span></a> 
+      <a href="c-strrev"><span>C strrev()</span></a> 
+      <a href="c-strlwr"><span>C strlwr()</span></a> 
+      <a href="c-strupr"><span>C strupr()</span></a> 
+      <a href="c-strstr"><span>C strstr()</span></a> 
+      <a href="/test/c-string-1"><span>C String Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Math</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-math"><span>C Math Functions</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Structure Union</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="structure-in-c"><span>C Structure</span></a> 
+      <a href="typedef-in-c">typedef in C</a> 
+      <a href="array-of-structures-in-c"><span>C Array of Structures</span></a> 
+      <a href="nested-structure-in-c"><span>C Nested Structure</span></a> 
+      <a href="c-union"><span>C Union</span></a> 
+      <a href="/test/c-structure-union-enums-1"><span>C Structure Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C File Handling</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="file-handling-in-c"><span>C File Handling</span></a> 
+      <a href="fprintf-fscanf-in-c"><span>C fprintf() fscanf()</span></a> 
+      <a href="fputc-fgetc-in-c"><span>C fputc() fgetc()</span></a> 
+      <a href="fputs-fgets-in-c"><span>C fputs() fgets()</span></a> 
+      <a href="fseek-in-c"><span>C fseek()</span></a> 
+      <a href="rewind-in-c"><span>C rewind()</span></a> 
+      <a href="ftell-in-c"><span>C ftell()</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Preprocessor</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-preprocessor"><span>C Preprocessor</span></a> 
+      <a href="c-macros"><span>C Macros</span></a> 
+      <a href="c-preprocessor-include"><span>C #include</span></a> 
+      <a href="c-preprocessor-define"><span>C #define</span></a> 
+      <a href="c-preprocessor-undef"><span>C #undef</span></a> 
+      <a href="c-preprocessor-ifdef"><span>C #ifdef</span></a> 
+      <a href="c-preprocessor-ifndef"><span>C #ifndef</span></a> 
+      <a href="c-preprocessor-if"><span>C #if</span></a> 
+      <a href="c-preprocessor-else"><span>C #else</span></a> 
+      <a href="c-preprocessor-error"><span>C #error</span></a> 
+      <a href="c-preprocessor-pragma"><span>C #pragma</span></a> 
+      <a href="/test/c-preprocessor-1"><span>C Preprocessor Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Command Line</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="command-line-arguments-in-c"><span>Command Line Arguments</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Misc</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-expressions">C Expressions</a> 
+      <a href="c-data-segments">Data Segments</a> 
+      <a href="flow-of-c-program">Flow of C Program</a> 
+      <a href="classification-of-programming-languages">Classification of Programming Languages</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Programming Test</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="test/c-programming"><span>C Programming Test</span></a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Programs</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-programs"><span>Top 10+ C Programs</span></a> 
+      <a href="fibonacci-series-in-c"><span>Fibonacci Series</span></a> 
+      <a href="prime-number-program-in-c"><span>Prime Number</span></a> 
+      <a href="palindrome-program-in-c"><span>Palindrome Number</span></a> 
+      <a href="factorial-program-in-c"><span>Factorial</span></a> 
+      <a href="armstrong-number-in-c"><span>Armstrong Number</span></a> 
+      <a href="sum-of-digits-program-in-c"><span>Sum of digits</span></a> 
+      <a href="c-program-to-reverse-number"><span>Reverse Number</span></a> 
+      <a href="c-program-to-swap-two-numbers-without-using-third-variable"><span>Swap Number</span></a> 
+      <a href="c-program-to-print-hello-without-semicolon"><span>Print "Hello" without ;</span></a> 
+      <a href="assembly-program-in-c"><span>Assembly code in C</span></a> 
+      <a href="c-program-without-main"><span>C program without main</span></a> 
+      <a href="matrix-multiplication-in-c"><span>Matrix Multiplication</span></a> 
+      <a href="c-program-to-convert-decimal-to-binary"><span>Decimal to Binary</span></a> 
+      <a href="c-program-to-convert-number-in-characters"><span>Number in Characters</span></a> 
+      <a href="c-program-to-print-alphabet-triangle"><span>Alphabet Triangle</span></a> 
+      <a href="c-program-to-print-number-triangle"><span>Number Triangle</span></a> 
+      <a href="c-program-to-generate-fibonacci-triangle"><span>Fibonacci Triangle</span></a> 
+      <a href="hexadecimal-to-binary-in-c">Hexadecimal to Binary</a> 
+      <a href="hexadecimal-to-decimal-in-c">Hexadecimal to Decimal</a> 
+      <a href="strong-number-in-c">Strong number in C</a> 
+      <a href="star-program-in-c">Star Program in C</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">Math</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="prime-numbers-list">Prime Numbers List</a> 
+      <a href="composite-numbers-list">Composite Numbers List</a> 
+      <a href="square-numbers-list">Square Numbers List</a> 
+      <a href="binary-numbers-list">Binary Numbers List</a> 
+      <a href="fibonacci-numbers-list">Fibonacci Numbers List</a> 
+      <a href="how-many-ounces-in-a-cup">Ounces in a Cup</a> 
+      <a href="how-many-ounces-in-a-pound">Ounces in a Pound</a> 
+      <a href="how-many-ounces-in-a-gallon">Ounces in a Gallon</a> 
+      <a href="how-many-ounces-in-a-liter">Ounces in a Liter</a> 
+      <a href="how-many-ounces-in-a-pint">Ounces in a Pint</a> 
+      <a href="how-many-ounces-in-a-quart">Ounces in a Quart</a> 
+      <a href="how-many-ounces-in-a-tablespoon">Ounces in a Tablespoon</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">C Interview</span></h2> 
+     </div> 
+     <div class="leftmenu"> 
+      <a href="c-interview-questions">C Interview Questions</a> 
+     </div> 
+     <img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"> 
+     <br> 
+     <div id="leftad" style="margin-left:20px"> 
+      <!-- javatpointleft --> 
+      <ins class="adPushupAds" data-adpcontrol="g8drp" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSBqYXZhdHBvaW50bGVmdCAtLT4KPGlucyBjbGFzcz0iYWRzYnlnb29nbGUiCiAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lLWJsb2NrO3dpZHRoOjE2MHB4O2hlaWdodDo2MDBweCIKICAgICBkYXRhLWFkLWNsaWVudD0iY2EtcHViLTQ2OTk4NTg1NDkwMjMzODIiCiAgICAgZGF0YS1hZC1zbG90PSI0NDc2NDAxMjIyIj48L2lucz4KPHNjcmlwdD4KKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsKPC9zY3JpcHQ+"></ins>
+      <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     </div> 
+    </div> 
+    <div class="onlycontent"> 
+     <div class="onlycontentad"> 
+      <!-- CM_JTP_Leaderbaord --> 
+      <ins class="adPushupAds" data-adpcontrol="nuoc1" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSBDTV9KVFBfTGVhZGVyYmFvcmQgLS0+CjxpbnMgY2xhc3M9ImFkc2J5Z29vZ2xlIgogICAgIHN0eWxlPSJkaXNwbGF5OmJsb2NrIgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjkyMDE5MDE5MTUiCiAgICAgZGF0YS1hZC1mb3JtYXQ9ImF1dG8iCiAgICAgZGF0YS1mdWxsLXdpZHRoLXJlc3BvbnNpdmU9InRydWUiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4="></ins>
+      <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     </div> 
+     <div class="onlycontentinner"> 
+      <div id="city"> 
+       <table> 
+        <tbody>
+         <tr>
+          <td> 
+           <div id="bottomnextup"> 
+            <a class="next" href="history-of-c-language">next &#x2192;</a> 
+            <!--
+<a class="next" href="java-what-where-and-why">&lt;&lt;prev</a>
+--> 
+           </div> <h1 class="h1">C Programming Language Tutorial</h1> <a href="https://training.javatpoint.com/c-cpp-training.jsp" target="_blank"><img src="corebasic/images/c-training.png" class="imageright" alt="C Programming"></a> 
+           <!--<img src="https://static.javatpoint.com/cpages/images/c-programming.png" alt="C Programming Tutorial" style="float:right;padding-left:15px"/>--> <p><strong>C language</strong> Tutorial with programming approach for beginners and professionals, helps you to understand the C language tutorial easily. Our C tutorial explains each topic with programs.</p> <p>The C Language is developed by Dennis Ritchie for creating system applications that directly interact with the hardware devices such as drivers, kernels, etc.</p> <p>C programming is considered as the base for other programming languages, that is why it is known as mother language.</p> <p>It can be defined by the following ways:</p> 
+           <ol> 
+            <li>Mother language</li> 
+            <li>System programming language</li> 
+            <li>Procedure-oriented programming language</li> 
+            <li>Structured programming language</li> 
+            <li>Mid-level programming language</li> 
+           </ol> 
+           <hr> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+           <!-- CM_JTP_WTC_Responsive --> <ins class="adsbygoogle cm_jtp_wtc_responsive" style="display:inline-block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="6746133113"></ins> <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> <h2 class="h2">1) C as a mother language</h2> <p>C language is considered as the mother language of all the modern programming languages because <strong>most of the compilers, JVMs, Kernels, etc. are written in C language</strong>, and most of the programming languages follow C syntax, for example, C++, Java, C#, etc.</p> <p>It provides the core concepts like the <a href="c-array">array</a>, <a href="c-strings">strings</a>, <a href="functions-in-c">functions</a>, <a href="file-handling-in-c">file handling</a>, etc. that are being used in many languages like <a href="cpp-tutorial">C++</a>, <a href="java-tutorial">Java</a>, <a href="c-sharp-tutorial">C#</a>, etc.</p> 
+           <hr> <h2 class="h2">2) C as a system programming language</h2> <p>A system programming language is used to create system software. C language is a system programming language because it <strong>can be used to do low-level programming (for example driver and kernel)</strong>. It is generally used to create hardware devices, OS, drivers, kernels, etc. For example, Linux kernel is written in C.</p> <p>It can't be used for internet programming like Java, .Net, PHP, etc.</p> 
+           <hr> <h2 class="h2">3) C as a procedural language</h2> <p>A procedure is known as a function, method, routine, subroutine, etc. A procedural language <strong>specifies a series of steps for the program to solve the problem</strong>.</p> <p>A procedural language breaks the program into functions, data structures, etc.</p> <p>C is a procedural language. In C, variables and function prototypes must be declared before being used.</p> 
+           <hr> <h2 class="h2">4) C as a structured programming language</h2> <p>A structured programming language is a subset of the procedural language. <strong>Structure means to break a program into parts or blocks</strong> so that it may be easy to understand. </p> <p>In the C language, we break the program into parts using functions. It makes the program easier to understand and modify.</p> 
+           <hr> <h2 class="h2">5) C as a mid-level programming language</h2> <p>C is considered as a middle-level language because it <strong>supports the feature of both low-level and high-level languages</strong>. C language program is converted into assembly code, it supports pointer arithmetic (low-level), but it is machine independent (a feature of high-level).</p> <p>A <strong>Low-level language</strong> is specific to one machine, i.e., machine dependent. It is machine dependent, fast to run. But it is not easy to understand.</p> <p>A <strong>High-Level language</strong> is not specific to one machine, i.e., machine independent. It is easy to understand.</p> 
+           <hr> <h2 class="h2">C Program</h2> <p>In this tutorial, all C programs are given with C compiler so that you can quickly change the C program code.</p> <p>File: main.c</p> 
+           <div class="codeblock">
+            <textarea name="code" class="Cpp">
+#include &lt;stdio.h&gt;
+int main() {
+printf("Hello C Programming\n");
+return 0;
+}
+</textarea>
+           </div> 
+           <!--<span class="testit"><a href="https://compiler.javatpoint.com/c/test.jsp?filename=main" target="_blank">Test it Now</a></span>--> <p>A detailed description of above program is given in next chapters.</p> 
+           <hr> <h2 class="h2 center textshadow">C Programming Index</h2> 
+           <hr> 
+           <div class="responsivediv"> 
+            <div class="col-3"> 
+             <p><strong>C Tutorial</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-programming-language-tutorial">What is C Language</a></li> 
+              <li><a href="history-of-c-language">History of C </a></li> 
+              <li><a href="features-of-c-language">Features of C</a></li> 
+              <li><a href="how-to-install-c">How to install C</a></li> 
+              <li><a href="first-c-program">First C Program</a></li> 
+              <li><a href="flow-of-c-program">Flow of C Program</a></li> 
+              <li><a href="printf-scanf">printf scanf</a></li> 
+              <li><a href="variables-in-c">Variables in C</a></li> 
+              <li><a href="data-types-in-c">Data Types in c</a></li> 
+              <li><a href="keywords-in-c">Keywords in c</a></li> 
+              <li><a href="c-operators">C Operators</a></li> 
+              <li><a href="comments-in-c">C Comments</a></li> 
+              <li><a href="escape-sequence-in-c">C Escape Sequence</a></li> 
+              <li><a href="constants-in-c">Constants in C</a></li> 
+              <li><a href="/test/c-fundamental-1">C Fundamental Test</a></li> 
+             </ul> 
+             <p><strong>C Control Statements</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-if-else">C if-else</a></li> 
+              <li><a href="c-switch">C switch</a></li> 
+              <li><a href="c-loop">C Loops</a></li> 
+              <li><a href="do-while-loop-in-c">C do-while loop</a></li> 
+              <li><a href="while-loop-in-c">C while loop</a></li> 
+              <li><a href="for-loop-in-c">C for loop</a></li> 
+              <li><a href="c-break">C break</a></li> 
+              <li><a href="c-continue">C continue</a></li> 
+              <li><a href="c-goto">C goto</a></li> 
+              <li><a href="type-casting-in-c">Type Casting</a></li> 
+              <li><a href="/test/c-control-statements-1">C Control Statement Test</a></li> 
+             </ul> 
+             <p><strong>C Functions</strong></p> 
+             <ul class="points"> 
+              <li><a href="functions-in-c">What is function</a></li> 
+              <li><a href="call-by-value-and-call-by-reference-in-c">Call: Value &amp; Reference</a></li> 
+              <li><a href="recursion-in-c">Recursion in c</a></li> 
+              <li><a href="storage-classes-in-c">Storage Classes</a></li> 
+              <li><a href="/test/c-functions-1">C Functions Test</a></li> 
+             </ul> 
+             <p><strong>C Array</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-array">1-D Array</a></li> 
+              <li><a href="two-dimensional-array-in-c">2-D Array</a></li> 
+              <li><a href="passing-array-to-function-in-c">Array to Function</a></li> 
+              <li><a href="/test/c-array-1">C Array Test</a></li> 
+             </ul> 
+             <p><strong>C Pointers</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-pointers">C Pointers</a></li> 
+              <li><a href="c-pointer-to-pointer">C Pointer to Pointer</a></li> 
+              <li><a href="pointer-arithmetic-in-c">C Pointer Arithmetic</a></li> 
+              <li><a href="/test/c-pointers-1">C Pointers Test</a></li> 
+             </ul> 
+             <p><strong>C Dynamic Memory</strong></p> 
+             <ul class="points"> 
+              <li><a href="dynamic-memory-allocation-in-c">Dynamic memory</a></li> 
+             </ul> 
+             <p><strong>C Strings</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-strings">String in C</a></li> 
+              <li><a href="c-gets-puts">C gets() &amp; puts()</a></li> 
+              <li><a href="c-string-functions">C String Functions</a></li> 
+              <li><a href="c-strlen">C strlen()</a></li> 
+              <li><a href="c-strcpy">C strcpy()</a></li> 
+              <li><a href="c-strcat">C strcat()</a></li> 
+              <li><a href="c-strcmp">C strcmp()</a></li> 
+              <li><a href="c-strrev">C strrev()</a></li> 
+              <li><a href="c-strlwr">C strlwr()</a></li> 
+              <li><a href="c-strupr">C strupr()</a></li> 
+              <li><a href="c-strstr">C strstr()</a></li> 
+              <li><a href="/test/c-string-1">C String Test</a></li> 
+             </ul> 
+            </div> 
+            <div class="col-3"> 
+             <p><strong>C Math</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-math">C Math Functions</a></li> 
+             </ul> 
+             <p><strong>C Structure Union</strong></p> 
+             <ul class="points"> 
+              <li><a href="structure-in-c">C Structure</a></li> 
+              <li><a href="array-of-structures-in-c">C Array of Structures</a></li> 
+              <li><a href="nested-structure-in-c">C Nested Structure</a></li> 
+              <li><a href="c-union">C Union</a></li> 
+              <li><a href="/test/c-structure-union-enums-1">C Structure Test</a></li> 
+             </ul> 
+             <p><strong>C File Handling</strong></p> 
+             <ul class="points"> 
+              <li><a href="file-handling-in-c">C File Handling</a></li> 
+              <li><a href="fprintf-fscanf-in-c">C fprintf() fscanf()</a></li> 
+              <li><a href="fputc-fgetc-in-c">C fputc() fgetc()</a></li> 
+              <li><a href="fputs-fgets-in-c">C fputs() fgets()</a></li> 
+              <li><a href="fseek-in-c">C fseek()</a></li> 
+              <li><a href="rewind-in-c">C rewind()</a></li> 
+              <li><a href="ftell-in-c">C ftell()</a></li> 
+             </ul> 
+             <p><strong>C Preprocessor</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-preprocessor">C Preprocessor</a></li> 
+              <li><a href="c-macros">C Macros</a></li> 
+              <li><a href="c-preprocessor-include">C #include</a></li> 
+              <li><a href="c-preprocessor-define">C #define</a></li> 
+              <li><a href="c-preprocessor-undef">C #undef</a></li> 
+              <li><a href="c-preprocessor-ifdef">C #ifdef</a></li> 
+              <li><a href="c-preprocessor-ifndef">C #ifndef</a></li> 
+              <li><a href="c-preprocessor-if">C #if</a></li> 
+              <li><a href="c-preprocessor-else">C #else</a></li> 
+              <li><a href="c-preprocessor-error">C #error</a></li> 
+              <li><a href="c-preprocessor-pragma">C #pragma</a></li> 
+              <li><a href="/test/c-preprocessor-1">C Preprocessor Test</a></li> 
+             </ul> 
+             <p><strong>C Command Line</strong></p> 
+             <ul class="points"> 
+              <li><a href="command-line-arguments-in-c">Command Line Arguments</a></li> 
+             </ul> 
+             <p><strong>C Programming Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="test/c-programming">C Programming Test</a></li> 
+             </ul> 
+             <p><strong>C Programs</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-programs">Top 10+ C Programs</a></li> 
+              <li><a href="fibonacci-series-in-c">Fibonacci Series</a></li> 
+              <li><a href="prime-number-program-in-c">Prime Number</a></li> 
+              <li><a href="palindrome-program-in-c">Palindrome Number</a></li> 
+              <li><a href="factorial-program-in-c">Factorial</a></li> 
+              <li><a href="armstrong-number-in-c">Armstrong Number</a></li> 
+              <li><a href="sum-of-digits-program-in-c">Sum of digits</a></li> 
+              <li><a href="c-program-to-reverse-number">Reverse Number</a></li> 
+              <li><a href="c-program-to-swap-two-numbers-without-using-third-variable">Swap Number</a></li> 
+              <li><a href="c-program-to-print-hello-without-semicolon">Print "Hello" without ;</a></li> 
+              <li><a href="assembly-program-in-c">Assembly code in C</a></li> 
+              <li><a href="c-program-without-main">C program without main</a></li> 
+              <li><a href="matrix-multiplication-in-c">Matrix Multiplication</a></li> 
+              <li><a href="c-program-to-convert-decimal-to-binary">Decimal to Binary</a></li> 
+              <li><a href="c-program-to-convert-number-in-characters">Number in Characters</a></li> 
+              <li><a href="c-program-to-print-alphabet-triangle">Alphabet Triangle</a></li> 
+              <li><a href="c-program-to-print-number-triangle">Number Triangle</a></li> 
+              <li><a href="c-program-to-generate-fibonacci-triangle">Fibonacci Triangle</a></li> 
+             </ul> 
+            </div> 
+            <div class="col-3"> 
+             <p><strong>C Programming Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-programming">C Programming Test</a></li> 
+             </ul> 
+             <p><strong>C Fundamental Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-fundamental-1">C Fundamental 1</a></li> 
+              <li><a href="/test/c-fundamental-2">C Fundamental 2</a></li> 
+              <li><a href="/test/c-fundamental-3">C Fundamental 3</a></li> 
+              <li><a href="/test/c-fundamental-4">C Fundamental 4</a></li> 
+             </ul> 
+             <p><strong>C Control Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-control-statements-1">C Control Statement 1</a></li> 
+              <li><a href="/test/c-control-statements-2">C Control Statement 2</a></li> 
+              <li><a href="/test/c-control-statements-3">C Control Statement 3</a></li> 
+              <li><a href="/test/c-control-statements-4">C Control Statement 4</a></li> 
+             </ul> 
+             <p><strong>C Function Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-functions-1">C Functions 1</a></li> 
+              <li><a href="/test/c-functions-2">C Functions 2</a></li> 
+              <li><a href="/test/c-functions-3">C Functions 3</a></li> 
+              <li><a href="/test/c-functions-4">C Functions 4</a></li> 
+             </ul> 
+             <p><strong>C Array Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-array-1">C Array 1</a></li> 
+              <li><a href="/test/c-array-2">C Array 2</a></li> 
+              <li><a href="/test/c-array-3">C Array 3</a></li> 
+              <li><a href="/test/c-array-4">C Array 4</a></li> 
+             </ul> 
+             <p><strong>C Pointers Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-pointers-1">C Pointers 1</a></li> 
+              <li><a href="/test/c-pointers-2">C Pointers 2</a></li> 
+              <li><a href="/test/c-pointers-3">C Pointers 3</a></li> 
+              <li><a href="/test/c-pointers-4">C Pointers 4</a></li> 
+             </ul> 
+             <p><strong>C String Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-string-1">C String 1</a></li> 
+              <li><a href="/test/c-string-2">C String 2</a></li> 
+              <li><a href="/test/c-string-3">C String 3</a></li> 
+              <li><a href="/test/c-string-4">C String 4</a></li> 
+             </ul> 
+             <p><strong>C Structure Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-structure-union-enums-1">C Structure 1</a></li> 
+              <li><a href="/test/c-structure-union-enums-2">C Structure 2</a></li> 
+              <li><a href="/test/c-structure-union-enums-3">C Structure 3</a></li> 
+              <li><a href="/test/c-structure-union-enums-4">C Structure 4</a></li> 
+             </ul> 
+             <p><strong>C Preprocessor Test</strong></p> 
+             <ul class="points"> 
+              <li><a href="/test/c-preprocessor-1">C Preprocessor 1</a></li> 
+              <li><a href="/test/c-preprocessor-2">C Preprocessor 2</a></li> 
+              <li><a href="/test/c-preprocessor-3">C Preprocessor 3</a></li> 
+              <li><a href="/test/c-preprocessor-4">C Preprocessor 4</a></li> 
+             </ul> 
+             <p><strong>C Interview</strong></p> 
+             <ul class="points"> 
+              <li><a href="c-interview-questions">C Interview Questions</a></li> 
+             </ul> 
+            </div> 
+           </div> 
+           <hr> <h2 class="h2">Prerequisite</h2> <p>Before learning C Programming, you must have the basic knowledge of Computer Fundamental.</p> <h2 class="h2">Audience</h2> <p>Our C Programming tutorial is designed to help beginners and professionals.</p> <h2 class="h2">Problem</h2> <p>We assure that you will not find any mistake in this C Language Tutorial. But if there is any mistake, please post the problem in the contact form.</p> 
+           <div class="nexttopicdiv"> 
+            <span class="nexttopictext">Next Topic</span>
+            <span class="nexttopiclink"><a href="history-of-c-language">History of C</a></span> 
+           </div> 
+           <!-- link --> <br><br> 
+           <div id="bottomnext"> 
+            <!--
+<a style="float:left" class="next" href="java-what-where-and-why">&larr; prev</a>
+--> 
+            <a style="float:right" class="next" href="history-of-c-language">next &#x2192;</a> 
+           </div> <br><br> </td>
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+      <h2 class="h2">Help Others, Please Share</h2> 
+      <a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/c-programming-language-tutorial"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"></a> 
+      <a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/c-programming-language-tutorial"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"></a> 
+      <!--<a rel="nofollow" title="Google+" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://www.javatpoint.com/c-programming-language-tutorial"><img src="https://www.javatpoint.com/images/google-plus32.png" alt="google plus"/></a>--> 
+      <a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/c-programming-language-tutorial"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"></a> 
+      <!--<a rel="nofollow" title="Tumblr" target="_blank" href="https://www.tumblr.com/share/link?url=https://www.javatpoint.com/c-programming-language-tutorial"><img src="https://www.javatpoint.com/images/tumblr32.png" alt="tumbler"/></a>--> 
+      <!-- contribute start--> 
+      <!-- contribute end--> 
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+      <!-- AP_37780_300x250(0) --> 
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="5022809933" data-ad-format="auto" data-full-width-responsive="true"></ins> 
+      <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+      <!-- latest tutorials start --> 
+      <h2 class="h2">Learn Latest Tutorials</h2> 
+      <div class="firsthomecontent"> 
+       <a href="https://www.javatpoint.com/python-openpyxl"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/openpyxl/images/openpyxl-home.png" alt="Openpyxl Tutorial"> 
+         <p>Openpyxl</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/tally"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/tally/images/tally-home.png" alt="Tally Tutorial"> 
+         <p>Tally</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/godot"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/godot/images/godot-home.png" alt="Godot Tutorial"> 
+         <p>Godot</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/spring-boot-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/springboot/images/spring-boot-home.jpg" alt="Spring Boot Tutorial"> 
+         <p>Spring Boot</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/gradle"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/gradle/images/gradle-home.png" alt="Gradle Tutorial"> 
+         <p>Gradle</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/uml"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/uml/images/uml-home.png" alt="UML Tutorial"> 
+         <p>UML</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/artificial-neural-network"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/artificial-neural-network/images/ann-home.png" alt="Artificial Neural Network Tutorial"> 
+         <p>ANN</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/es6"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/es6/images/es6-home.png" alt="ES6 Tutorial"> 
+         <p>ES6</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/flutter"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/flutter/images/flutter-home.png" alt="Flutter Tutorial"> 
+         <p>Flutter</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/selenium-python"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/selenium-python/images/selenium-python-home.png" alt="Selenium Python"> 
+         <p>Selenium Py</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/firebase"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/firebase/images/firebase-home.png" alt="Firebase Tutorial"> 
+         <p>Firebase</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/cobol"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/cobol/images/cobol-home.png" alt="Cobol Tutorial"> 
+         <p>Cobol</p> 
+        </div> </a> 
+      </div> 
+      <hr> 
+      <!-- preparation start --> 
+      <h2 class="h2">Preparation</h2> 
+      <div class="firsthomecontent"> 
+       <a href="https://www.javatpoint.com/aptitude/quantitative"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Aptitude"> 
+         <p>Aptitude</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/reasoning"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/reasoning/images/reasoning-home.png" alt="Logical Reasoning"> 
+         <p>Reasoning</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/verbal-ability"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/verbal-ability/images/verbal-ability-home.png" alt="Verbal Ability"> 
+         <p>Verbal A.</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/interview-questions-and-answers"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/interviewhome.png" alt="Interview Questions"> 
+         <p>Interview</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/company-interview-questions-and-recruitment-process"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/interview/images/company-home.jpeg" alt="Company Interview Questions"> 
+         <p>Company</p> 
+        </div> </a> 
+      </div> 
+      <hr> 
+      <!-- trending start --> 
+      <h2 class="h2">Trending Technologies</h2> 
+      <div class="firsthomecontent"> 
+       <a href="https://www.javatpoint.com/artificial-intelligence-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/ai/images/ai-home.png" alt="Artificial Intelligence Tutorial"> 
+         <p>AI</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/aws-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/aws/images/aws-home.png" alt="AWS Tutorial"> 
+         <p>AWS</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/selenium-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/selenium/images/selenium-home.jpg" alt="Selenium tutorial"> 
+         <p>Selenium</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/cloud-computing-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/cloudhome.png" alt="Cloud tutorial"> 
+         <p>Cloud</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/hadoop-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/hadoop.jpg" alt="Hadoop tutorial"> 
+         <p>Hadoop</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/reactjs-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/reactjs/images/reactjs-home.png" alt="ReactJS Tutorial"> 
+         <p>ReactJS</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/data-science"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/data-science/images/data-science-home.png" alt="Data Science Tutorial"> 
+         <p>D. Science</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/angular-7-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/angular7/images/angular-7-home.png" alt="Angular 7 Tutorial"> 
+         <p>Angular 7</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/blockchain-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/blockchain/images/blockchain-home.png" alt="Blockchain Tutorial"> 
+         <p>Blockchain</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/git"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/git/images/git-home.png" alt="Git Tutorial"> 
+         <p>Git</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/machine-learning"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/machine-learning/images/machine-learning-home.png" alt="Machine Learning Tutorial"> 
+         <p>ML</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/devops"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/devops/images/devops-home.png" alt="DevOps Tutorial"> 
+         <p>DevOps</p> 
+        </div> </a> 
+      </div> 
+      <hr> 
+      <!-- B.Tech / MCA --> 
+      <h2 class="h2">B.Tech / MCA</h2> 
+      <div class="firsthomecontent"> 
+       <a href="https://www.javatpoint.com/dbms-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/dbms/images/dbms-home.jpg" alt="DBMS tutorial"> 
+         <p>DBMS</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/data-structure-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/ds/images/ds-home.png" alt="Data Structures tutorial"> 
+         <p>DS</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/daa-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/daa/images/daa-home.png" alt="DAA tutorial"> 
+         <p>DAA</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/os-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/operating-system/images/operating-system-home.png" alt="Operating System tutorial"> 
+         <p>OS</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/computer-network-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-home.png" alt="Computer Network tutorial"> 
+         <p>C. Network</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/compiler-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/compiler/images/compiler-design-home.png" alt="Compiler Design tutorial"> 
+         <p>Compiler D.</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/computer-organization-and-architecture-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/coa/images/coa-home.png" alt="Computer Organization and Architecture"> 
+         <p>COA</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/discrete-mathematics-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/dms/images/discrete-mathematics-home.png" alt="Discrete Mathematics Tutorial"> 
+         <p>D. Math.</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/ethical-hacking-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/ethical-hacking/images/ethical-hacking-home.png" alt="Ethical Hacking Tutorial"> 
+         <p>E. Hacking</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/computer-graphics-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/computer-graphics/images/computer-graphics-home.png" alt="Computer Graphics Tutorial"> 
+         <p>C. Graphics</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/software-engineering-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/software-engineering/images/software-engineering-home.png" alt="Software Engineering Tutorial"> 
+         <p>Software E.</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/html-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/html-tutorial.png" alt="html tutorial"> 
+         <p>Web Tech.</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/cyber-security-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/cybersecurity/images/cyber-security-home.png" alt="Cyber Security tutorial"> 
+         <p>Cyber Sec.</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/automata-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/automata/images/automata-home.jpg" alt="Automata Tutorial"> 
+         <p>Automata</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/c-programming-language-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/clanguagehome.png" alt="C Language tutorial"> 
+         <p>C</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/cpp-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/cpp/images/cpp-home.png" alt="C++ tutorial"> 
+         <p>C++</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/java-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/javahome.png" alt="Java tutorial"> 
+         <p>Java</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/net-framework"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/csharp/net/images/net-home.png" alt=".Net Framework tutorial"> 
+         <p>.Net</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/python-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/pythonhome.png" alt="Python tutorial"> 
+         <p>Python</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/programs-list"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://www.javatpoint.com/images/programs.jpg" alt="List of Programs"> 
+         <p>Programs</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/control-system-tutorial"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/control-system/images/control-system-home.jpg" alt="Control Systems tutorial"> 
+         <p>Control S.</p> 
+        </div> </a> 
+       <a href="https://www.javatpoint.com/data-mining"> 
+        <div class="homecontent">
+         <img class="lazyload" data-src="https://static.javatpoint.com/tutorial/data-mining/images/data-mining-home.png" alt="Data Mining Tutorial"> 
+         <p>Data Mining</p> 
+        </div> </a> 
+      </div> 
+     </div> 
+     <br>
+     <br>
+     <div class="mobilemenu" style="clear:both"> 
+      <ins class="adPushupAds" data-adpcontrol="jrfe7" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByZXNwb25zaXZlbW9iaWxlZm9vdGVyIC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTpibG9jayIKICAgICBkYXRhLWFkLWNsaWVudD0iY2EtcHViLTQ2OTk4NTg1NDkwMjMzODIiCiAgICAgZGF0YS1hZC1zbG90PSI4MjIyODY2MzE4IgogICAgIGRhdGEtYWQtZm9ybWF0PSJhdXRvIgogICAgIGRhdGEtZnVsbC13aWR0aC1yZXNwb25zaXZlPSJ0cnVlIj48L2lucz4KPHNjcmlwdD4KKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsKPC9zY3JpcHQ+"></ins>
+      <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     </div>
+    </div> 
+    <div id="right"> 
+     <ins class="adPushupAds" data-adpcontrol="am3c1" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSBuZXdyaWdodCAtLT4KPGlucyBjbGFzcz0iYWRzYnlnb29nbGUiCiAgICAgc3R5bGU9ImRpc3BsYXk6YmxvY2siCiAgICAgZGF0YS1hZC1jbGllbnQ9ImNhLXB1Yi00Njk5ODU4NTQ5MDIzMzgyIgogICAgIGRhdGEtYWQtc2xvdD0iNjAzNDkxMjU0MSIKICAgICBkYXRhLWFkLWZvcm1hdD0iYXV0byIKICAgICBkYXRhLWZ1bGwtd2lkdGgtcmVzcG9uc2l2ZT0idHJ1ZSI+PC9pbnM+CjxzY3JpcHQ+CihhZHNieWdvb2dsZSA9IHdpbmRvdy5hZHNieWdvb2dsZSB8fCBbXSkucHVzaCh7fSk7Cjwvc2NyaXB0Pg=="></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     <br>
+     <br> 
+     <ins class="adPushupAds" data-adpcontrol="am3c1" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSBuZXdyaWdodCAtLT4KPGlucyBjbGFzcz0iYWRzYnlnb29nbGUiCiAgICAgc3R5bGU9ImRpc3BsYXk6YmxvY2siCiAgICAgZGF0YS1hZC1jbGllbnQ9ImNhLXB1Yi00Njk5ODU4NTQ5MDIzMzgyIgogICAgIGRhdGEtYWQtc2xvdD0iNjAzNDkxMjU0MSIKICAgICBkYXRhLWFkLWZvcm1hdD0iYXV0byIKICAgICBkYXRhLWZ1bGwtd2lkdGgtcmVzcG9uc2l2ZT0idHJ1ZSI+PC9pbnM+CjxzY3JpcHQ+CihhZHNieWdvb2dsZSA9IHdpbmRvdy5hZHNieWdvb2dsZSB8fCBbXSkucHVzaCh7fSk7Cjwvc2NyaXB0Pg=="></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     <br>
+     <br> 
+    </div> 
+    <div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"> 
+     <!-- right1024only --> 
+     <ins class="adPushupAds" data-adpcontrol="6d5qg" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByaWdodDEwMjRvbmx5IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MTIwcHg7aGVpZ2h0OjYwMHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjIxODAxMTg3MTYiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4K"></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     <br>
+     <br> 
+     <ins class="adPushupAds" data-adpcontrol="6d5qg" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByaWdodDEwMjRvbmx5IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MTIwcHg7aGVpZ2h0OjYwMHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjIxODAxMTg3MTYiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4K"></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+    </div> 
+    <br> 
+    <div id="footer" style="clear:both;width:100%"> 
+     <!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;"> <h2 style="padding:60px 0px 0px 20px">Summer Training</h2> <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="https://training.javatpoint.com"><img src="https://static.javatpoint.com/images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a> <br>Course Fee: &#8377; 6000 Only<br>Duration: 6 Week </p></div>-->
+     <div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> 
+      <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> 
+      <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. </p>
+      <ul class="points"> 
+       <li>Website Designing</li>
+       <li>Website Development</li>
+       <li>Java Development</li>
+       <li>PHP Development</li>
+       <li>WordPress</li>
+       <li>Graphic Designing</li>
+       <li>Logo</li>
+       <li>Digital Marketing</li>
+       <li>On Page and Off Page SEO</li>
+       <li>PPC</li>
+       <li>Content Development</li>
+       <li>Corporate Training</li>
+       <li>Classroom and Online Training</li>
+       <li>Data Entry</li>
+      </ul> 
+      <p style="padding-bottom:60px"></p>
+     </div>
+     <div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> 
+      <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> 
+      <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. <br>Duration: 1 week to 2 week<br></p>
+     </div>
+     <!--<div class="homebox2"><h2>Our Initiatives</h2><marquee behavior="alternate"><a rel="nofollow noopener" href="https://www.hindi100.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/><p>Hindi100</p></div></a><a rel="nofollow noopener" href="https://www.lyricsia.com"><div class="box2"><img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/><p>Lyricsia</p></div></a></div></a></marquee></div>-->
+     <script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+     <div style="margin-top:5px;text-align:center"> 
+      <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> 
+      <a target="_blank" rel="nofollow noopener" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://static.javatpoint.com/images/social/rss1.png" alt="RSS Feed"></a> 
+      <a target="_blank" rel="nofollow noopener" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://static.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"></a> 
+      <a rel="nofollow noopener" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://static.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"></a> 
+      <a target="_blank noopener" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://static.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"></a> 
+      <a target="_blank" rel="nofollow noopener" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://static.javatpoint.com/images/youtube32.png" alt="YouTube"></a> 
+      <a target="_blank" rel="nofollow noopener" href="https://javatpoint.blogspot.com"><img src="https://static.javatpoint.com/images/social/blog.png" alt="Blog Page"></a> 
+     </div>
+     <footer class="footer1">
+      <div class="column4">
+       <h3>Learn Tutorials</h3>
+       <a href="https://www.javatpoint.com/java-tutorial">Learn Java</a>
+       <a href="https://www.javatpoint.com/data-structure-tutorial">Learn Data Structures</a>
+       <a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Programming</a>
+       <a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a>
+       <a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a>
+       <a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a>
+       <a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a>
+       <a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a>
+       <a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a>
+       <a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a>
+      </div>
+      <div class="column4">
+       <h3>Our Websites</h3>
+       <a href="https://www.javatpoint.com">Javatpoint.com</a>
+       <a rel="dofollow noopener" target="_blank" href="https://www.hindi100.com">Hindi100.com</a>
+       <a rel="dofollow noopener" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a>
+       <a rel="nofollow noopener" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a>
+       <a rel="nofollow noopener" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a>
+      </div>
+      <div class="column4">
+       <h3>Our Services</h3>
+       <p>Website Development</p>
+       <p>Android Development</p>
+       <p>Website Designing</p>
+       <p>Digital Marketing</p>
+       <p>Summer Training</p>
+       <p>Industrial Training</p>
+       <p>College Campus Training</p>
+      </div>
+      <div class="column4">
+       <h3>Contact</h3>
+       <p>Address: G-13, 2nd Floor, Sec-3</p>
+       <p>Noida, UP, 201301, India</p>
+       <p>Contact No: 0120-4256464, 9990449935</p>
+       <a href="https://www.javatpoint.com/contact-us">Contact Us</a> 
+       <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> 
+       <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a>
+       <a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a>
+       <br>
+       <a href="https://www.javatpoint.com/sonoo-jaiswal">About Me</a>
+      </div>
+     </footer>
+     <footer class="footer2">
+      <p>© Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.</p>
+     </footer> 
+    </div>
+   </div>
+  </div> 
+  <script src="https://static.javatpoint.com/js/shcoreandbrush.js"></script>
+  <script> dp.SyntaxHighlighter.HighlightAll('code'); </script> 
+  <script src="https://static.javatpoint.com/lazysizes.min.js" async></script>   
+ </body>
+</html>

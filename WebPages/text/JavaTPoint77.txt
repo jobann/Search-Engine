@@ -1,0 +1,22 @@
+https://www.javatpoint.com/strictfp-keyword
+Java Strictfp Keyword - Javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Java Training Basics of Java Java Object Class Java OOPs Concepts Naming Convention Object and Class Constructor static keyword this keyword Java Inheritance Inheritance(IS-A) Aggregation(HAS-A) Java Polymorphism Method Overloading Method Overriding Covariant Return Type super keyword Instance Initializer block final keyword Runtime Polymorphism Dynamic Binding instanceof operator Java Abstraction Abstract class Interface Abstract vs Interface Java Encapsulation Package Access Modifiers Encapsulation Java Array Java Array Java OOPs Misc Object class Object Cloning Math class Wrapper Class Java Recursion Call By Value strictfp keyword javadoc tool Command Line Arg Object vs Class Overloading vs Overriding Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT & Events Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Internationalization Interview Questions next ? ? prev Java Strictfp Keyword Java strictfp keyword ensures that you will get the same result on every platform if you perform operations in the floating-point variable. The precision may differ from platform to platform that is why java programming language have provided the strictfp keyword, so that you get same result on every platform. So, now you have better control over the floating-point arithmetic. Legal code for strictfp keyword The strictfp keyword can be applied on methods, classes and interfaces. 
+strictfp class A{}//strictfp applied on class
+ 
+strictfp interface M{}//strictfp applied on interface
+ 
+class A{
+strictfp void m(){}//strictfp applied on method
+}
+ Illegal code for strictfp keyword The strictfp keyword cannot be applied on abstract methods, variables or constructors. 
+class B{
+strictfp abstract void m();//Illegal combination of modifiers
+}
+ 
+class B{
+strictfp int data=10;//modifier strictfp not allowed here
+}
+ 
+class B{
+strictfp B(){}//modifier strictfp not allowed here
+}
+ Next TopicCreating API Document ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.

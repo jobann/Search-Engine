@@ -1,0 +1,89 @@
+https://www.javatpoint.com/method-overloading-in-java
+Method Overloading in Java - Javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Java Training Basics of Java Java Object Class Java OOPs Concepts Naming Convention Object and Class Constructor static keyword this keyword Java Inheritance Inheritance(IS-A) Aggregation(HAS-A) Java Polymorphism Method Overloading Method Overriding Covariant Return Type super keyword Instance Initializer block final keyword Runtime Polymorphism Dynamic Binding instanceof operator Java Abstraction Abstract class Interface Abstract vs Interface Java Encapsulation Package Access Modifiers Encapsulation Java Array Java Array Java OOPs Misc Object class Object Cloning Math class Wrapper Class Java Recursion Call By Value strictfp keyword javadoc tool Command Line Arg Object vs Class Overloading vs Overriding Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT & Events Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Internationalization Interview Questions next ? ? prev Method Overloading in Java Different ways to overload the method By changing the no. of arguments By changing the datatype Why method overloading is not possible by changing the return type Can we overload the main method method overloading with Type Promotion If a class has multiple methods having same name but different in parameters, it is known as Method Overloading. If we have to perform only one operation, having same name of the methods increases the readability of the program. Suppose you have to perform addition of the given numbers but there can be any number of arguments, if you write the method such as a(int,int) for two parameters, and b(int,int,int) for three parameters then it may be difficult for you as well as other programmers to understand the behavior of the method because its name differs. So, we perform method overloading to figure out the program quickly. Advantage of method overloading Method overloading increases the readability of the program. Different ways to overload the method There are two ways to overload the method in java By changing number of arguments By changing the data type In java, Method Overloading is not possible by changing the return type of the method only. 1) Method Overloading: changing no. of arguments In this example, we have created two methods, first add() method performs addition of two numbers and second add method performs addition of three numbers. In this example, we are creating static methods so that we don't need to create instance for calling methods. 
+class Adder{
+static int add(int a,int b){return a+b;}
+static int add(int a,int b,int c){return a+b+c;}
+}
+class TestOverloading1{
+public static void main(String[] args){
+System.out.println(Adder.add(11,11));
+System.out.println(Adder.add(11,11,11));
+}}
+ Test it Now Output: 
+22
+33
+ 2) Method Overloading: changing data type of arguments In this example, we have created two methods that differs in data type. The first add method receives two integer arguments and second add method receives two double arguments. 
+class Adder{
+static int add(int a, int b){return a+b;}
+static double add(double a, double b){return a+b;}
+}
+class TestOverloading2{
+public static void main(String[] args){
+System.out.println(Adder.add(11,11));
+System.out.println(Adder.add(12.3,12.6));
+}}
+ Test it Now Output: 
+22
+24.9
+ Q) Why Method Overloading is not possible by changing the return type of method only? In java, method overloading is not possible by changing the return type of the method only because of ambiguity. Let's see how ambiguity may occur: 
+class Adder{
+static int add(int a,int b){return a+b;}
+static double add(int a,int b){return a+b;}
+}
+class TestOverloading3{
+public static void main(String[] args){
+System.out.println(Adder.add(11,11));//ambiguity
+}}
+ Test it Now Output: 
+Compile Time Error: method add(int,int) is already defined in class Adder
+ System.out.println(Adder.add(11,11)); //Here, how can java determine which sum() method should be called? Note: Compile Time Error is better than Run Time Error. So, java compiler renders compiler time error if you declare the same method having same parameters. Can we overload java main() method? Yes, by method overloading. You can have any number of main methods in a class by method overloading. But JVM calls main() method which receives string array as arguments only. Let's see the simple example: 
+class TestOverloading4{
+public static void main(String[] args){System.out.println("main with String[]");}
+public static void main(String args){System.out.println("main with String");}
+public static void main(){System.out.println("main without args");}
+}
+ Test it Now Output: 
+main with String[]
+ Method Overloading and Type Promotion One type is promoted to another implicitly if no matching datatype is found. Let's understand the concept by the figure given below: As displayed in the above diagram, byte can be promoted to short, int, long, float or double. The short datatype can be promoted to int, long, float or double. The char datatype can be promoted to int,long,float or double and so on. Example of Method Overloading with TypePromotion 
+
+class OverloadingCalculation1{
+  void sum(int a,long b){System.out.println(a+b);}
+  void sum(int a,int b,int c){System.out.println(a+b+c);}
+
+  public static void main(String args[]){
+  OverloadingCalculation1 obj=new OverloadingCalculation1();
+  obj.sum(20,20);//now second int literal will be promoted to long
+  obj.sum(20,20,20);
+
+  }
+}
+ Test it Now 
+Output:40
+       60
+ Example of Method Overloading with Type Promotion if matching found If there are matching type arguments in the method, type promotion is not performed. 
+class OverloadingCalculation2{
+  void sum(int a,int b){System.out.println("int arg method invoked");}
+  void sum(long a,long b){System.out.println("long arg method invoked");}
+
+  public static void main(String args[]){
+  OverloadingCalculation2 obj=new OverloadingCalculation2();
+  obj.sum(20,20);//now int arg sum() method gets invoked
+  }
+}
+ Test it Now 
+Output:int arg method invoked
+ Example of Method Overloading with Type Promotion in case of ambiguity If there are no matching type arguments in the method, and each method promotes similar number of arguments, there will be ambiguity. 
+
+class OverloadingCalculation3{
+  void sum(int a,long b){System.out.println("a method invoked");}
+  void sum(long a,int b){System.out.println("b method invoked");}
+
+  public static void main(String args[]){
+  OverloadingCalculation3 obj=new OverloadingCalculation3();
+  obj.sum(20,20);//now ambiguity
+  }
+}
+ Test it Now 
+Output:Compile Time Error
+       
+ One type is not de-promoted implicitly for example double cannot be depromoted to any type implicitly. Next TopicMethod Overriding in java ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.

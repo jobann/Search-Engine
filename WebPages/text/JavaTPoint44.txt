@@ -1,0 +1,140 @@
+https://www.javatpoint.com/java-continue
+Java Continue - Javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Java Training Java Tutorial What is Java History of Java Features of Java C++ vs Java Hello Java Program Program Internal How to set path? JDK, JRE and JVM JVM: Java Virtual Machine Java Variables Java Data Types Unicode System Operators Keywords Control Statements Java If-else Java Switch Java For Loop Java While Loop Java Do While Loop Java Break Java Continue Java Comments Java Programs Java Object Class Java OOPs Concepts Naming Convention Object and Class Constructor static keyword this keyword Java Inheritance Inheritance(IS-A) Aggregation(HAS-A) Java Polymorphism Method Overloading Method Overriding Covariant Return Type super keyword Instance Initializer block final keyword Runtime Polymorphism Dynamic Binding instanceof operator Java Abstraction Abstract class Interface Abstract vs Interface Java Encapsulation Package Access Modifiers Encapsulation Java Array Java Array Java OOPs Misc Object class Object Cloning Math class Wrapper Class Java Recursion Call By Value strictfp keyword javadoc tool Command Line Arg Object vs Class Overloading vs Overriding Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT & Events Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java Misc Java New Features RMI Internationalization Interview Questions Java MCQ next ? ? prev Java Continue Statement The continue statement is used in loop control structure when you need to jump to the next iteration of the loop immediately. It can be used with for loop or while loop. The Java continue statement is used to continue the loop. It continues the current flow of the program and skips the remaining code at the specified condition. In case of an inner loop, it continues the inner loop only. We can use Java continue statement in all types of loops such as for loop, while loop and do-while loop. Syntax: 
+jump-statement;  
+continue; 
+ Java Continue Statement Example Example: 
+//Java Program to demonstrate the use of continue statement
+//inside the for loop.
+public class ContinueExample {
+public static void main(String[] args) {
+    //for loop
+    for(int i=1;i<=10;i++){
+    	if(i==5){
+    	    //using continue statement
+    		continue;//it will skip the rest statement
+    	}
+    	System.out.println(i);
+    }
+}
+}
+ Test it Now Output: 
+1
+2
+3
+4
+6
+7
+8
+9
+10
+ As you can see in the above output, 5 is not printed on the console. It is because the loop is continued when it reaches to 5. Java Continue Statement with Inner Loop It continues inner loop only if you use the continue statement inside the inner loop. Example: 
+//Java Program to illustrate the use of continue statement
+//inside an inner loop
+public class ContinueExample2 {
+public static void main(String[] args) {
+            //outer loop
+	        for(int i=1;i<=3;i++){  
+	                //inner loop
+	                for(int j=1;j<=3;j++){  
+	                    if(i==2&&j==2){  
+	                        //using continue statement inside inner loop
+	                        continue;  
+	                    }  
+	                    System.out.println(i+" "+j);  
+	                }  
+	        }  
+}
+}
+ Output: 
+1 1
+1 2
+1 3
+2 1
+2 3
+3 1
+3 2
+3 3
+ Java Continue Statement with Labeled For Loop We can use continute statement with a label. This feature is introduced since JDK 1.5. So, we can continue any loop in Java now whether it is outer loop or inner. Example: 
+//Java Program to illustrate the use of continue statement
+//with label inside an inner loop to continue outer loop
+public class ContinueExample3 {
+public static void main(String[] args) {
+            aa:
+	        for(int i=1;i<=3;i++){  
+	                bb:
+	                for(int j=1;j<=3;j++){  
+	                    if(i==2&&j==2){  
+	                        //using continue statement with label
+	                        continue aa;  
+	                    }  
+	                    System.out.println(i+" "+j);  
+	                }  
+	        }  
+}
+}
+ Output: 
+1 1
+1 2
+1 3
+2 1
+3 1
+3 2
+3 3
+ Java Continue Statement in while loop Example: 
+//Java Program to demonstrate the use of continue statement
+//inside the while loop.
+public class ContinueWhileExample {
+public static void main(String[] args) {
+    //while loop
+    int i=1;
+    while(i<=10){
+        if(i==5){
+    	    //using continue statement
+            i++;
+    		continue;//it will skip the rest statement
+    	}
+    	System.out.println(i);
+        i++;
+    }
+}
+}
+ Test it Now Output: 
+1
+2
+3
+4
+6
+7
+8
+9
+10
+ Java Continue Statement in do-while loop Example: 
+//Java Program to demonstrate the use of continue statement
+//inside the Java do-while loop.
+public class ContinueDoWhileExample {
+public static void main(String[] args) {
+    //declaring variable
+    int i=1;
+    //do-while loop
+    do{
+        if(i==5){
+    	        //using continue statement
+                 i++;
+    		continue;//it will skip the rest statement
+    	}
+    	System.out.println(i);
+        i++;
+    }while(i<=10);
+}
+}
+ Test it Now Output: 
+1
+2
+3
+4
+6
+7
+8
+9
+10
+ Next TopicJava Comments ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.

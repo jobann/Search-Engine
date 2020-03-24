@@ -1,0 +1,41 @@
+https://www.javatpoint.com/java-applet
+Java Applet Tutorial - javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Basics of Java OOPs Concepts Java String Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT Java Swing Java Applet Applet Basics Graphics in Applet Displaying image in Applet Animation in Applet EventHandling in Applet JApplet class Painting in Applet Digital Clock in Applet Analog Clock in Applet Parameter in Applet Applet Communication Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Internationalization Interview Questions next ? ? prev Java Applet Applet is a special type of program that is embedded in the webpage to generate the dynamic content. It runs inside the browser and works at client side. Advantage of Applet There are many advantages of applet. They are as follows: It works at client side so less response time. Secured It can be executed by browsers running under many plateforms, including Linux, Windows, Mac Os etc. Drawback of Applet Plugin is required at client browser to execute applet. Do You Know Who is responsible to manage the life cycle of an applet ? How to perform animation in applet ? How to paint like paint brush in applet ? How to display digital clock in applet ? How to display analog clock in applet ? How to communicate two applets ? Hierarchy of Applet As displayed in the above diagram, Applet class extends Panel. Panel class extends Container which is the subclass of Component. Lifecycle of Java Applet Applet is initialized. Applet is started. Applet is painted. Applet is stopped. Applet is destroyed. Lifecycle methods for Applet: The java.applet.Applet class 4 life cycle methods and java.awt.Component class provides 1 life cycle methods for an applet. java.applet.Applet class For creating any applet java.applet.Applet class must be inherited. It provides 4 life cycle methods of applet. public void init(): is used to initialized the Applet. It is invoked only once. public void start(): is invoked after the init() method or browser is maximized. It is used to start the Applet. public void stop(): is used to stop the Applet. It is invoked when Applet is stop or browser is minimized. public void destroy(): is used to destroy the Applet. It is invoked only once. java.awt.Component class The Component class provides 1 life cycle method of applet. public void paint(Graphics g): is used to paint the Applet. It provides Graphics class object that can be used for drawing oval, rectangle, arc etc. Who is responsible to manage the life cycle of an applet? Java Plug-in software. How to run an Applet? There are two ways to run an applet By html file. By appletViewer tool (for testing purpose). Simple example of Applet by html file: To execute the applet by html file, create an applet and compile it. After that create an html file and place the applet code in html file. Now click the html file. 
+//First.java
+import java.applet.Applet;
+import java.awt.Graphics;
+public class First extends Applet{
+
+public void paint(Graphics g){
+g.drawString("welcome",150,150);
+}
+
+}
+
+ Note: class must be public because its object is created by Java Plugin software that resides on the browser. myapplet.html 
+
+<html>
+<body>
+<applet code="First.class" width="300" height="300">
+</applet>
+</body>
+</html>
+
+ Simple example of Applet by appletviewer tool: To execute the applet by appletviewer tool, create an applet that contains applet tag in comment and compile it. After that run it by: appletviewer First.java. Now Html file is not required but it is for testing purpose only. 
+//First.java
+import java.applet.Applet;
+import java.awt.Graphics;
+public class First extends Applet{
+
+public void paint(Graphics g){
+g.drawString("welcome to applet",150,150);
+}
+
+}
+/*
+<applet code="First.class" width="300" height="300">
+</applet>
+*/
+ To execute the applet by appletviewer tool, write in command prompt: 
+c:\>javac First.java
+c:\>appletviewer First.java
+ Next TopicGraphics in applet ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.
