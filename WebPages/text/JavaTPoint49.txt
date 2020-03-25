@@ -1,0 +1,260 @@
+https://www.javatpoint.com/object-and-class-in-java
+Object in Java | Class in Java - javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Java Training Basics of Java Java Object Class Java OOPs Concepts Naming Convention Object and Class Constructor static keyword this keyword Java Inheritance Inheritance(IS-A) Aggregation(HAS-A) Java Polymorphism Method Overloading Method Overriding Covariant Return Type super keyword Instance Initializer block final keyword Runtime Polymorphism Dynamic Binding instanceof operator Java Abstraction Abstract class Interface Abstract vs Interface Java Encapsulation Package Access Modifiers Encapsulation Java Array Java Array Java OOPs Misc Object class Object Cloning Math class Wrapper Class Java Recursion Call By Value strictfp keyword javadoc tool Command Line Arg Object vs Class Overloading vs Overriding Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT & Events Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Internationalization Interview Questions next ? ? prev Objects and Classes in Java Object in Java Class in Java Instance Variable in Java Method in Java Example of Object and class that maintains the records of student Anonymous Object In this page, we will learn about Java objects and classes. In object-oriented programming technique, we design a program using objects and classes. An object in Java is the physical as well as a logical entity, whereas, a class in Java is a logical entity only. What is an object in Java An entity that has state and behavior is known as an object e.g., chair, bike, marker, pen, table, car, etc. It can be physical or logical (tangible and intangible). The example of an intangible object is the banking system. An object has three characteristics: State: represents the data (value) of an object. Behavior: represents the behavior (functionality) of an object such as deposit, withdraw, etc. Identity: An object identity is typically implemented via a unique ID. The value of the ID is not visible to the external user. However, it is used internally by the JVM to identify each object uniquely. For Example, Pen is an object. Its name is Reynolds; color is white, known as its state. It is used to write, so writing is its behavior. An object is an instance of a class. A class is a template or blueprint from which objects are created. So, an object is the instance(result) of a class. Object Definitions: An object is a real-world entity. An object is a runtime entity. The object is an entity which has state and behavior. The object is an instance of a class. What is a class in Java A class is a group of objects which have common properties. It is a template or blueprint from which objects are created. It is a logical entity. It can't be physical. A class in Java can contain: Fields Methods Constructors Blocks Nested class and interface Syntax to declare a class: 
+class <class_name>{
+    field;
+    method;
+}
+ Instance variable in Java A variable which is created inside the class but outside the method is known as an instance variable. Instance variable doesn't get memory at compile time. It gets memory at runtime when an object or instance is created. That is why it is known as an instance variable. Method in Java In Java, a method is like a function which is used to expose the behavior of an object. Advantage of Method Code Reusability Code Optimization new keyword in Java The new keyword is used to allocate memory at runtime. All objects get memory in Heap memory area. Object and Class Example: main within the class In this example, we have created a Student class which has two data members id and name. We are creating the object of the Student class by new keyword and printing the object's value. Here, we are creating a main() method inside the class. File: Student.java 
+//Java Program to illustrate how to define a class and fields
+//Defining a Student class.
+class Student{
+ //defining fields
+ int id;//field or data member or instance variable
+ String name;
+ //creating main method inside the Student class
+ public static void main(String args[]){
+  //Creating an object or instance
+  Student s1=new Student();//creating an object of Student
+  //Printing values of the object
+  System.out.println(s1.id);//accessing member through reference variable
+  System.out.println(s1.name);
+ }
+}
+ Test it Now Output: 
+0 
+null
+ Object and Class Example: main outside the class In real time development, we create classes and use it from another class. It is a better approach than previous one. Let's see a simple example, where we are having main() method in another class. We can have multiple classes in different Java files or single Java file. If you define multiple classes in a single Java source file, it is a good idea to save the file name with the class name which has main() method. File: TestStudent1.java 
+//Java Program to demonstrate having the main method in 
+//another class
+//Creating Student class.
+class Student{
+ int id;
+ String name;
+}
+//Creating another class TestStudent1 which contains the main method
+class TestStudent1{
+ public static void main(String args[]){
+  Student s1=new Student();
+  System.out.println(s1.id);
+  System.out.println(s1.name);
+ }
+}
+ Test it Now Output: 
+0 
+null
+ 3 Ways to initialize object There are 3 ways to initialize object in Java. By reference variable By method By constructor 1) Object and Class Example: Initialization through reference Initializing an object means storing data into the object. Let's see a simple example where we are going to initialize the object through a reference variable. File: TestStudent2.java 
+class Student{
+ int id;
+ String name;
+}
+class TestStudent2{
+ public static void main(String args[]){
+  Student s1=new Student();
+  s1.id=101;
+  s1.name="Sonoo";
+  System.out.println(s1.id+" "+s1.name);//printing members with a white space
+ }
+}
+ Test it Now Output: 
+101 Sonoo
+ We can also create multiple objects and store information in it through reference variable. File: TestStudent3.java 
+class Student{
+ int id;
+ String name;
+}
+class TestStudent3{
+ public static void main(String args[]){
+  //Creating objects
+  Student s1=new Student();
+  Student s2=new Student();
+  //Initializing objects
+  s1.id=101;
+  s1.name="Sonoo";
+  s2.id=102;
+  s2.name="Amit";
+  //Printing data
+  System.out.println(s1.id+" "+s1.name);
+  System.out.println(s2.id+" "+s2.name);
+ }
+}
+ Test it Now Output: 
+101 Sonoo
+102 Amit
+ 2) Object and Class Example: Initialization through method In this example, we are creating the two objects of Student class and initializing the value to these objects by invoking the insertRecord method. Here, we are displaying the state (data) of the objects by invoking the displayInformation() method. File: TestStudent4.java 
+class Student{
+ int rollno;
+ String name;
+ void insertRecord(int r, String n){
+  rollno=r;
+  name=n;
+ }
+ void displayInformation(){System.out.println(rollno+" "+name);}
+}
+class TestStudent4{
+ public static void main(String args[]){
+  Student s1=new Student();
+  Student s2=new Student();
+  s1.insertRecord(111,"Karan");
+  s2.insertRecord(222,"Aryan");
+  s1.displayInformation();
+  s2.displayInformation();
+ }
+}
+ Test it Now Output: 
+111 Karan
+222 Aryan
+ As you can see in the above figure, object gets the memory in heap memory area. The reference variable refers to the object allocated in the heap memory area. Here, s1 and s2 both are reference variables that refer to the objects allocated in memory. 3) Object and Class Example: Initialization through a constructor We will learn about constructors in Java later. Object and Class Example: Employee Let's see an example where we are maintaining records of employees. File: TestEmployee.java 
+class Employee{
+	int id;
+	String name;
+	float salary;
+	void insert(int i, String n, float s) {
+		id=i;
+		name=n;
+		salary=s;
+	}
+	void display(){System.out.println(id+" "+name+" "+salary);}
+}
+public class TestEmployee {
+public static void main(String[] args) {
+	Employee e1=new Employee();
+	Employee e2=new Employee();
+	Employee e3=new Employee();
+	e1.insert(101,"ajeet",45000);
+	e2.insert(102,"irfan",25000);
+	e3.insert(103,"nakul",55000);
+	e1.display();
+	e2.display();
+	e3.display();
+}
+}
+ Test it Now Output: 
+101 ajeet 45000.0
+102 irfan 25000.0
+103 nakul 55000.0
+ Object and Class Example: Rectangle There is given another example that maintains the records of Rectangle class. File: TestRectangle1.java 
+class Rectangle{
+ int length;
+ int width;
+ void insert(int l, int w){
+  length=l;
+  width=w;
+ }
+ void calculateArea(){System.out.println(length*width);}
+}
+class TestRectangle1{
+ public static void main(String args[]){
+  Rectangle r1=new Rectangle();
+  Rectangle r2=new Rectangle();
+  r1.insert(11,5);
+  r2.insert(3,15);
+  r1.calculateArea();
+  r2.calculateArea();
+}
+}
+ Test it Now Output: 
+55 
+45     
+ What are the different ways to create an object in Java? There are many ways to create an object in java. They are: By new keyword By newInstance() method By clone() method By deserialization By factory method etc. We will learn these ways to create object later. Anonymous object Anonymous simply means nameless. An object which has no reference is known as an anonymous object. It can be used at the time of object creation only. If you have to use an object only once, an anonymous object is a good approach. For example: 
+new Calculation();//anonymous object
+ Calling method through a reference: 
+Calculation c=new Calculation();
+c.fact(5);
+ Calling method through an anonymous object 
+new Calculation().fact(5);
+ Let's see the full example of an anonymous object in Java. 
+class Calculation{
+ void fact(int  n){
+  int fact=1;
+  for(int i=1;i<=n;i++){
+   fact=fact*i;
+  }
+ System.out.println("factorial is "+fact);
+}
+public static void main(String args[]){
+ new Calculation().fact(5);//calling method with anonymous object
+}
+}
+ Output: 
+Factorial is 120
+ Creating multiple objects by one type only We can create multiple objects by one type only as we do in case of primitives. Initialization of primitive variables: 
+int a=10, b=20;
+ Initialization of refernce variables: 
+Rectangle r1=new Rectangle(), r2=new Rectangle();//creating two objects
+ Let's see the example: 
+//Java Program to illustrate the use of Rectangle class which
+//has length and width data members
+class Rectangle{
+ int length;
+ int width;
+ void insert(int l,int w){
+  length=l;
+  width=w;
+ }
+ void calculateArea(){System.out.println(length*width);}
+}
+class TestRectangle2{
+ public static void main(String args[]){
+  Rectangle r1=new Rectangle(),r2=new Rectangle();//creating two objects
+  r1.insert(11,5);
+  r2.insert(3,15);
+  r1.calculateArea();
+  r2.calculateArea();
+}
+}
+ Test it Now Output: 
+55 
+45     
+ Real World Example: Account File: TestAccount.java 
+//Java Program to demonstrate the working of a banking-system
+//where we deposit and withdraw amount from our account.
+//Creating an Account class which has deposit() and withdraw() methods
+class Account{
+int acc_no;
+String name;
+float amount;
+//Method to initialize object
+void insert(int a,String n,float amt){
+acc_no=a;
+name=n;
+amount=amt;
+}
+//deposit method
+void deposit(float amt){
+amount=amount+amt;
+System.out.println(amt+" deposited");
+}
+//withdraw method
+void withdraw(float amt){
+if(amount<amt){
+System.out.println("Insufficient Balance");
+}else{
+amount=amount-amt;
+System.out.println(amt+" withdrawn");
+}
+}
+//method to check the balance of the account
+void checkBalance(){System.out.println("Balance is: "+amount);}
+//method to display the values of an object
+void display(){System.out.println(acc_no+" "+name+" "+amount);}
+}
+//Creating a test class to deposit and withdraw amount
+class TestAccount{
+public static void main(String[] args){
+Account a1=new Account();
+a1.insert(832345,"Ankit",1000);
+a1.display();
+a1.checkBalance();
+a1.deposit(40000);
+a1.checkBalance();
+a1.withdraw(15000);
+a1.checkBalance();
+}} 
+ Test it Now Output: 
+832345 Ankit 1000.0
+Balance is: 1000.0
+40000.0 deposited
+Balance is: 41000.0
+15000.0 withdrawn
+Balance is: 26000.0
+ Next TopicConstructor in java ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.

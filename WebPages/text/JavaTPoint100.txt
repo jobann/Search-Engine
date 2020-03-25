@@ -1,0 +1,135 @@
+https://www.javatpoint.com/RMI
+Remote Method Invocation (RMI) - javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Basics of Java OOPs Concepts Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Java RMI Internationalization Interview Questions next ? ? prev RMI (Remote Method Invocation) Remote Method Invocation (RMI) Understanding stub and skeleton stub skeleton Requirements for the distributed applications Steps to write the RMI program RMI Example The RMI (Remote Method Invocation) is an API that provides a mechanism to create distributed application in java. The RMI allows an object to invoke methods on an object running in another JVM. The RMI provides remote communication between the applications using two objects stub and skeleton. Understanding stub and skeleton RMI uses stub and skeleton object for communication with the remote object. A remote object is an object whose method can be invoked from another JVM. Let's understand the stub and skeleton objects: stub The stub is an object, acts as a gateway for the client side. All the outgoing requests are routed through it. It resides at the client side and represents the remote object. When the caller invokes method on the stub object, it does the following tasks: It initiates a connection with remote Virtual Machine (JVM), It writes and transmits (marshals) the parameters to the remote Virtual Machine (JVM), It waits for the result It reads (unmarshals) the return value or exception, and It finally, returns the value to the caller. skeleton The skeleton is an object, acts as a gateway for the server side object. All the incoming requests are routed through it. When the skeleton receives the incoming request, it does the following tasks: It reads the parameter for the remote method It invokes the method on the actual remote object, and It writes and transmits (marshals) the result to the caller. In the Java 2 SDK, an stub protocol was introduced that eliminates the need for skeletons. Understanding requirements for the distributed applications If any application performs these tasks, it can be distributed application.. The application need to locate the remote method It need to provide the communication with the remote objects, and The application need to load the class definitions for the objects. The RMI application have all these features, so it is called the distributed application. Java RMI Example The is given the 6 steps to write the RMI program. Create the remote interface Provide the implementation of the remote interface Compile the implementation class and create the stub and skeleton objects using the rmic tool Start the registry service by rmiregistry tool Create and start the remote application Create and start the client application RMI Example In this example, we have followed all the 6 steps to create and run the rmi application. The client application need only two files, remote interface and client application. In the rmi application, both client and server interacts with the remote interface. The client application invokes methods on the proxy object, RMI sends the request to the remote JVM. The return value is sent back to the proxy object and then to the client application. 1) create the remote interface For creating the remote interface, extend the Remote interface and declare the RemoteException with all the methods of the remote interface. Here, we are creating a remote interface that extends the Remote interface. There is only one method named add() and it declares RemoteException. 
+import java.rmi.*;
+public interface Adder extends Remote{
+public int add(int x,int y)throws RemoteException;
+}
+ 2) Provide the implementation of the remote interface Now provide the implementation of the remote interface. For providing the implementation of the Remote interface, we need to Either extend the UnicastRemoteObject class, or use the exportObject() method of the UnicastRemoteObject class In case, you extend the UnicastRemoteObject class, you must define a constructor that declares RemoteException. 
+import java.rmi.*;
+import java.rmi.server.*;
+public class AdderRemote extends UnicastRemoteObject implements Adder{
+AdderRemote()throws RemoteException{
+super();
+}
+public int add(int x,int y){return x+y;}
+}
+ 3) create the stub and skeleton objects using the rmic tool. Next step is to create stub and skeleton objects using the rmi compiler. The rmic tool invokes the RMI compiler and creates stub and skeleton objects. 
+rmic AdderRemote
+ 4) Start the registry service by the rmiregistry tool Now start the registry service by using the rmiregistry tool. If you don't specify the port number, it uses a default port number. In this example, we are using the port number 5000. 
+rmiregistry 5000
+ 5) Create and run the server application Now rmi services need to be hosted in a server process. The Naming class provides methods to get and store the remote object. The Naming class provides 5 methods. public static java.rmi.Remote lookup(java.lang.String) throws java.rmi.NotBoundException, java.net.MalformedURLException, java.rmi.RemoteException; It returns the reference of the remote object. public static void bind(java.lang.String, java.rmi.Remote) throws java.rmi.AlreadyBoundException, java.net.MalformedURLException, java.rmi.RemoteException; It binds the remote object with the given name. public static void unbind(java.lang.String) throws java.rmi.RemoteException, java.rmi.NotBoundException, java.net.MalformedURLException; It destroys the remote object which is bound with the given name. public static void rebind(java.lang.String, java.rmi.Remote) throws java.rmi.RemoteException, java.net.MalformedURLException; It binds the remote object to the new name. public static java.lang.String[] list(java.lang.String) throws java.rmi.RemoteException, java.net.MalformedURLException; It returns an array of the names of the remote objects bound in the registry. In this example, we are binding the remote object by the name sonoo. 
+import java.rmi.*;
+import java.rmi.registry.*;
+public class MyServer{
+public static void main(String args[]){
+try{
+Adder stub=new AdderRemote();
+Naming.rebind("rmi://localhost:5000/sonoo",stub);
+}catch(Exception e){System.out.println(e);}
+}
+}
+ 6) Create and run the client application At the client we are getting the stub object by the lookup() method of the Naming class and invoking the method on this object. In this example, we are running the server and client applications, in the same machine so we are using localhost. If you want to access the remote object from another machine, change the localhost to the host name (or IP address) where the remote object is located. 
+import java.rmi.*;
+public class MyClient{
+public static void main(String args[]){
+try{
+Adder stub=(Adder)Naming.lookup("rmi://localhost:5000/sonoo");
+System.out.println(stub.add(34,4));
+}catch(Exception e){}
+}
+}
+ download this example of rmi 
+
+For running this rmi example,
+
+1) compile all the java files
+
+javac *.java
+
+2)create stub and skeleton object by rmic tool
+
+rmic AdderRemote
+
+3)start rmi registry in one command prompt
+
+rmiregistry 5000
+
+4)start the server in another command prompt
+
+java MyServer
+
+5)start the client application in another command prompt
+
+java MyClient
+
+ Output of this RMI example Meaningful example of RMI application with database Consider a scenario, there are two applications running in different machines. Let's say MachineA and MachineB, machineA is located in United States and MachineB in India. MachineB want to get list of all the customers of MachineA application. Let's develop the RMI application by following the steps. 1) Create the table First of all, we need to create the table in the database. Here, we are using Oracle10 database. 2) Create Customer class and Remote interface File: Customer.java 
+package com.javatpoint;
+public class Customer implements java.io.Serializable{
+	private int acc_no;
+	private String firstname,lastname,email;
+	private float amount;
+//getters and setters
+}
+ Note: Customer class must be Serializable. File: Bank.java 
+package com.javatpoint;
+import java.rmi.*;
+import java.util.*;
+interface Bank extends Remote{
+public List<Customer> getCustomers()throws RemoteException;
+}
+ 3) Create the class that provides the implementation of Remote interface File: BankImpl.java 
+package com.javatpoint;
+import java.rmi.*;
+import java.rmi.server.*;
+import java.sql.*;
+import java.util.*;
+class BankImpl extends UnicastRemoteObject implements Bank{
+BankImpl()throws RemoteException{}
+
+public List<Customer> getCustomers(){
+List<Customer> list=new ArrayList<Customer>();
+try{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+PreparedStatement ps=con.prepareStatement("select * from customer400");
+ResultSet rs=ps.executeQuery();
+
+while(rs.next()){
+Customer c=new Customer();
+c.setAcc_no(rs.getInt(1));
+c.setFirstname(rs.getString(2));
+c.setLastname(rs.getString(3));
+c.setEmail(rs.getString(4));
+c.setAmount(rs.getFloat(5));
+list.add(c);
+}
+
+con.close();
+}catch(Exception e){System.out.println(e);}
+return list;
+}//end of getCustomers()
+}
+ 4) Compile the class rmic tool and start the registry service by rmiregistry tool 5) Create and run the Server File: MyServer.java 
+package com.javatpoint;
+import java.rmi.*;
+public class MyServer{
+public static void main(String args[])throws Exception{
+Remote r=new BankImpl();
+Naming.rebind("rmi://localhost:6666/javatpoint",r);
+}}
+ 6) Create and run the Client File: MyClient.java 
+package com.javatpoint;
+import java.util.*;
+import java.rmi.*;
+public class MyClient{
+public static void main(String args[])throws Exception{
+Bank b=(Bank)Naming.lookup("rmi://localhost:6666/javatpoint");
+
+List<Customer> list=b.getCustomers();
+for(Customer c:list){
+System.out.println(c.getAcc_no()+" "+c.getFirstname()+" "+c.getLastname()
++" "+c.getEmail()+" "+c.getAmount());
+}
+
+}}
+ download this example of rmi with database ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.

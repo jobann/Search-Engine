@@ -1,0 +1,99 @@
+https://www.javatpoint.com/final-keyword
+final keyword in Java - javatpoint ? Home Java C C++ C# Servlet JSP EJB Struts2 Mail Hibernate Spring Android Design P Quiz Projects Interview Q Comment Forum Training Java Training Basics of Java Java Object Class Java OOPs Concepts Naming Convention Object and Class Constructor static keyword this keyword Java Inheritance Inheritance(IS-A) Aggregation(HAS-A) Java Polymorphism Method Overloading Method Overriding Covariant Return Type super keyword Instance Initializer block final keyword Runtime Polymorphism Dynamic Binding instanceof operator Java Abstraction Abstract class Interface Abstract vs Interface Java Encapsulation Package Access Modifiers Encapsulation Java Array Java Array Java OOPs Misc Object class Object Cloning Math class Wrapper Class Java Recursion Call By Value strictfp keyword javadoc tool Command Line Arg Object vs Class Overloading vs Overriding Java String Java Regex Exception Handling Java Inner classes Java Multithreading Java I/O Java Networking Java AWT & Events Java Swing JavaFX Java Applet Java Reflection Java Date Java Conversion Java Collection Java JDBC Java New Features RMI Internationalization Interview Questions next ? ? prev Final Keyword In Java Final variable Final method Final class Is final method inherited ? Blank final variable Static blank final variable Final parameter Can you declare a final constructor The final keyword in java is used to restrict the user. The java final keyword can be used in many context. Final can be: variable method class The final keyword can be applied with the variables, a final variable that have no value it is called blank final variable or uninitialized final variable. It can be initialized in the constructor only. The blank final variable can be static also which will be initialized in the static block only. We will have detailed learning of these. Let's first learn the basics of final keyword. 1) Java final variable If you make any variable as final, you cannot change the value of final variable(It will be constant). Example of final variable There is a final variable speedlimit, we are going to change the value of this variable, but It can't be changed because final variable once assigned a value can never be changed. 
+ class Bike9{
+  final int speedlimit=90;//final variable
+  void run(){
+   speedlimit=400;
+  }
+  public static void main(String args[]){
+  Bike9 obj=new  Bike9();
+  obj.run();
+  }
+ }//end of class
+
+ Test it Now 
+Output:Compile Time Error
+ 2) Java final method If you make any method as final, you cannot override it. Example of final method 
+class Bike{
+  final void run(){System.out.println("running");}
+}
+   
+class Honda extends Bike{
+   void run(){System.out.println("running safely with 100kmph");}
+   
+   public static void main(String args[]){
+   Honda honda= new Honda();
+   honda.run();
+   }
+}
+ Test it Now 
+Output:Compile Time Error
+ 3) Java final class If you make any class as final, you cannot extend it. Example of final class 
+ final class Bike{}
+ 
+ class Honda1 extends Bike{
+   void run(){System.out.println("running safely with 100kmph");}
+   
+   public static void main(String args[]){
+   Honda1 honda= new Honda1();
+   honda.run();
+   }
+ }
+ Test it Now 
+Output:Compile Time Error
+ Q) Is final method inherited? Ans) Yes, final method is inherited but you cannot override it. For Example: 
+class Bike{
+  final void run(){System.out.println("running...");}
+}
+class Honda2 extends Bike{
+   public static void main(String args[]){
+    new Honda2().run();
+   }
+}
+ Test it Now 
+Output:running...
+ Q) What is blank or uninitialized final variable? A final variable that is not initialized at the time of declaration is known as blank final variable. If you want to create a variable that is initialized at the time of creating object and once initialized may not be changed, it is useful. For example PAN CARD number of an employee. It can be initialized only in constructor. Example of blank final variable 
+class Student{
+int id;
+String name;
+final String PAN_CARD_NUMBER;
+...
+}
+
+ Que) Can we initialize blank final variable? Yes, but only in constructor. For example: 
+class Bike10{
+  final int speedlimit;//blank final variable
+  
+  Bike10(){
+  speedlimit=70;
+  System.out.println(speedlimit);
+  }
+
+  public static void main(String args[]){
+    new Bike10();
+ }
+}
+ Test it Now 
+Output: 70
+ static blank final variable A static final variable that is not initialized at the time of declaration is known as static blank final variable. It can be initialized only in static block. Example of static blank final variable 
+class A{
+  static final int data;//static blank final variable
+  static{ data=50;}
+  public static void main(String args[]){
+    System.out.println(A.data);
+ }
+}
+ Q) What is final parameter? If you declare any parameter as final, you cannot change the value of it. 
+class Bike11{
+  int cube(final int n){
+   n=n+2;//can't be changed as n is final
+   n*n*n;
+  }
+  public static void main(String args[]){
+    Bike11 b=new Bike11();
+    b.cube(5);
+ }
+}
+ Test it Now 
+Output: Compile Time Error
+ Q) Can we declare a constructor final? No, because constructor is never inherited. Next TopicRuntime Polymorphism in java ? prev next ? Help Others, Please Share Learn Latest Tutorials Openpyxl Tally Godot Spring Boot Gradle UML ANN ES6 Flutter Selenium Py Firebase Cobol Preparation Aptitude Reasoning Verbal A. Interview Company Trending Technologies AI AWS Selenium Cloud Hadoop ReactJS D. Science Angular 7 Blockchain Git ML DevOps B.Tech / MCA DBMS DS DAA OS C. Network Compiler D. COA D. Math. E. Hacking C. Graphics Software E. Web Tech. Cyber Sec. Automata C C++ Java .Net Python Programs Control S. Data Mining Javatpoint Services JavaTpoint offers too many high quality services. Mail us on hr@javatpoint.com, to get more information about given services. Website Designing Website Development Java Development PHP Development WordPress Graphic Designing Logo Digital Marketing On Page and Off Page SEO PPC Content Development Corporate Training Classroom and Online Training Data Entry Training For College Campus JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at hr@javatpoint.com. Duration: 1 week to 2 week Like/Subscribe us for latest updates or newsletter Learn TutorialsLearn JavaLearn Data StructuresLearn C ProgrammingLearn C++ TutorialLearn C# TutorialLearn PHP TutorialLearn HTML TutorialLearn JavaScript TutorialLearn jQuery TutorialLearn Spring Tutorial Our WebsitesJavatpoint.comHindi100.comLyricsia.comQuoteperson.comJobandplacement.com Our Services Website Development Android Development Website Designing Digital Marketing Summer Training Industrial Training College Campus Training Contact Address: G-13, 2nd Floor, Sec-3 Noida, UP, 201301, India Contact No: 0120-4256464, 9990449935Contact Us Subscribe Us Privacy PolicySitemap About Me © Copyright 2011-2018 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.
