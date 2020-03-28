@@ -41,6 +41,8 @@ public class Crawler {
 	private String getHtml(String urls) throws IOException {
 		URL url = new URL(urls);
 		URLConnection connection = url.openConnection();
+		connection.setRequestProperty("User-Agent", "BBot/1.0");
+		connection.setRequestProperty("Accept-Charset", "UTF-8");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 		String inputLine, finalContents = "";
 
@@ -99,13 +101,7 @@ public class Crawler {
 			writer.println(text);
 			writer.close();
 
-			String html = doc.html();
-			File file2 = new File("WebPages/" + "html/" + urlName + "" + count + ".html");
-			file2.createNewFile();
-			writer = new PrintWriter(file2);
-			// writer.println("link");
-			writer.println(html);
-			writer.close();
+
 		} catch (Exception e) {
 			// e.printStackTrace();
 		}

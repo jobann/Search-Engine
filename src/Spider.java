@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class Spider {
 
-	static String[] urls = new String[] { "https://www.javatpoint.com/java-tutorial" };
+	 String[] urls = new String[] { "https://www.javatpoint.com/java-tutorial" };
 	 String[] urlNames = new String[] { "JavaTPoint" };
 
 	void start() throws IOException {
