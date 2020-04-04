@@ -42,6 +42,13 @@
 7.	To implement page ranking, frequency of these words along with the URL index are stored in the Hash Map.
 8.	The page ranking Hash Map is sorted in decreasing order of frequency words.
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/32582640/78415658-19e18680-75f1-11ea-8468-6940421794d1.png)
+
+![image](https://user-images.githubusercontent.com/32582640/78415688-5a410480-75f1-11ea-9ad7-762c8c72d1b3.png)
+
+![image](https://user-images.githubusercontent.com/32582640/78415700-75ac0f80-75f1-11ea-8307-11f47ad05814.png)
 
 
 
