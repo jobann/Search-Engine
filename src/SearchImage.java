@@ -1,10 +1,10 @@
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -13,42 +13,52 @@ import org.jsoup.select.Elements;
 
 /**
  * 
- * @author Shreya Wadhwa
+ * @author Aashka Prajapati
  *
  */
-public class Crawler {
+public class SearchImage {
 
-	String url, urlName;
+	// Searching image url in the database
+	/**
+	 * @param query name of file to search
+	 */
+	void searchImage(String query) {
+		// loop to check every url
+		for (int i = 0; i < Spider.urls.length; i++) {
+			String url = Spider.urls[i];
 
-	// Constructor to initialize variables
-	public Crawler(String url, String urlName) {
-		this.url = url;
-		this.urlName = urlName;
-	}
+			// Pattern to get Source path of url
+			String pattern = ".com/.*";
+			// Create a Pattern object
+			Pattern r = Pattern.compile(pattern);
 
-	// start Crawling to url
-	void startCrawling() throws IOException {
-		crawl(this.url);
-	}
+			try {
+				// getting html in text format
+				Document doc = Jsoup.parse(getHtml(url));
+				Elements elements = doc.select("img");
 
-	// Crawl to get urls from inputted url
-	private void crawl(String url) throws IOException {
-		Document doc = Jsoup.parse(getHtml(url));
-
-		Elements elements = doc.select("a");
-
-		int count = 0;
-		// Getting urls by attribute href
-		for (Element element : elements) {
-			String href = element.attr("href");
-			href = fixUrl(href, url);
-			// Wrting to files
-			writeToFiles(href, ++count);
+				for (Element element : elements) {
+					String img = element.attr("data-src");
+					img = fixUrl(img, url);
+					// matcher object.
+					Matcher m = r.matcher(img);
+					if (m.find()) {
+						String urlSource = img.substring(m.start());
+						if (urlSource.contains(query)) {
+							System.out.println(img);
+						}
+					}
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+
 	}
 
 	// Getting Html text from URL
-	private String getHtml(String urls) throws IOException {
+	private static String getHtml(String urls) throws IOException {
 		URL url = new URL(urls);
 		URLConnection connection = url.openConnection();
 		connection.setRequestProperty("User-Agent", "BBot/1.0");
@@ -66,7 +76,7 @@ public class Crawler {
 	}
 
 	// fixing link
-	private String fixUrl(String href, String url) {
+	private static String fixUrl(String href, String url) {
 
 		try {
 			URL link = new URL(url);
@@ -91,28 +101,9 @@ public class Crawler {
 	}
 
 	// Triming path from Url
-	private String trimPath(String path) {
+	static String trimPath(String path) {
 		int pos = path.lastIndexOf("/");
 		return pos <= -1 ? path : path.substring(0, pos + 1);
 	}
 
-	// writing to files
-	private void writeToFiles(String link, int count) throws IOException {
-
-		try {
-			System.out.println(link);
-			Document doc = Jsoup.connect(link).get();
-
-			String text = doc.text();
-			File file1 = new File("WebPages/" + "text/" + urlName + "" + count + ".txt");
-			file1.createNewFile();
-			PrintWriter writer = new PrintWriter(file1);
-			writer.println(link);
-			writer.println(text);
-			writer.close();
-
-		} catch (Exception e) {
-			// e.printStackTrace();
-		}
-	}
 }
