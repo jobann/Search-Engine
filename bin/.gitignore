@@ -1,5 +1,22 @@
+<<<<<<< HEAD
 /*.project
 /.classpath
 /HtmlToText.class
 /MainMenu.class
 /WebPages
+=======
+/Crawler.class
+/EditDistance.class
+/Home$1.class
+/Home$2$1.class
+/Home$2.class
+/Home.class
+/MainMenu.class
+/MainMenu2.class
+/SearchImage.class
+/SearchQuery$1.class
+/SearchQuery.class
+/SpellCheck.class
+/Spider.class
+/Tokenizer.class
+>>>>>>> jobann
